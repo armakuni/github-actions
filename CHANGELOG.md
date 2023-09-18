@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.2.3 - 2023-09-18
+#### Bug Fixes
+- Make release only run when tag is added - (633f67a) - Tom Oram
+
+- - -
+
 ## v0.2.2 - 2023-09-18
 #### Bug Fixes
 - Don't release if a new version has not been tagged - (ecfeee7) - Tom Oram
