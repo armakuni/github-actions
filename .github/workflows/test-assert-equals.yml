@@ -14,7 +14,7 @@ jobs:
           expected: abc
           actual: abc
 
-      - name: test-when-not-equal
+      - name: test-when-not-equal (this should fail)
         id: test-when-not-equal
         uses: ./assert-equals
         continue-on-error: true
