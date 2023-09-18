@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - tag-version
-    if: ${{ needs.tag-version.outputs.version-was-bumped }}
+    if: ${{ needs.tag-version.outputs.version-was-bumped == 'true' }}
     steps:
       - run: echo ${{ needs.tag-version.outputs.version-was-bumped }}
       - uses: actions/checkout@v3
