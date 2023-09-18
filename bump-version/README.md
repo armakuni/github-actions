@@ -25,14 +25,14 @@ You you can do this with the following steps:
 
 ```yaml
 - id: bump-version
-  uses: armakuni/github-actions/bump-version@main
+  uses: armakuni/github-actions/bump-version@{current_version}
 ```
 
 ### In a custom path
 
 ```yaml
 - id: bump-version
-  uses: armakuni/github-actions/bump-version@main
+  uses: armakuni/github-actions/bump-version@{current_version}
   with:
     working-directory: my-repo
 ```

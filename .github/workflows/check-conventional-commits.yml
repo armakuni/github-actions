@@ -9,6 +9,5 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          fetch-tags: true
       - id: check-conventional-commits
-        uses: armakuni/github-actions/check-conventional-commits@main
+        uses: armakuni/github-actions/check-conventional-commits@v0.2.0

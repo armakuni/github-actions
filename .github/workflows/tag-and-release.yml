@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
       - id: bump-version
-        uses: armakuni/github-actions/bump-version@main
+        uses: armakuni/github-actions/bump-version@v0.2.0
 
   create-release:
     name: create-release

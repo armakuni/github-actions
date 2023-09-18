@@ -7,13 +7,13 @@ Install [Cogogitto](https://github.com/cocogitto/cocogitto) in Github Actions.
 ### Latest Version
 
 ```yaml
-- uses: armakuni/github-actions/setup-cocogitto@main
+- uses: armakuni/github-actions/setup-cocogitto@{current_version}
 ```
 
 ### Specific Version
 
 ```yaml
-- uses: armakuni/github-actions/setup-cocogitto@main
+- uses: armakuni/github-actions/setup-cocogitto@{current_version}
   with:
     version: 5.5.0
 ```

@@ -7,7 +7,7 @@ This is a utility action which you can use in your workflows to quickly check ou
 
 ```yaml
 - name: check-version
-  uses: armakuni/github-actions/assert-equals@main
+  uses: armakuni/github-actions/assert-equals@{current_version}
   with:
     expected: "2.1.3"
     actual: ${{ steps.previous-step.outputs.version }}

@@ -47,7 +47,7 @@ jobs:
           working-directory: test-repo
 
       - name: confirm-failure
-        uses: armakuni/github-actions/assert-equals@main
+        uses: armakuni/github-actions/assert-equals@v0.2.0
         with:
           expected: failure
           actual: "${{ steps.check-failure.outcome }}"

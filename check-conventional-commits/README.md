@@ -8,5 +8,5 @@ This action uses [Cogogitto](https://github.com/cocogitto/cocogitto).
 
 ```yaml
 - uses: actions/checkout@v3
-- uses: ./armakuni-actions/check-conventional-commits
+- uses: ./armakuni-actions/check-conventional-commits@{current_version}
 ```
