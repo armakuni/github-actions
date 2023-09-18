@@ -1,0 +1,10 @@
+on:
+  push:
+    branches: ["*"]
+
+jobs:
+  test-setup-cocogitto:
+    uses: ./.github/workflows/test-setup-cocogitto.yml
+  test-bump-version:
+    uses: ./.github/workflows/test-bump-version.yml
+    

@@ -1,0 +1,71 @@
+on:
+  workflow_call:
+
+jobs:
+  test-bump-version:
+    name: Test bump-version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: armakuni-actions
+
+      - run: ls -la
+
+      - name: create-test-repo
+        run: |
+          git config --global user.email "github-actions@armakuni.com"
+          git config --global user.name "AK Actions Bot"
+          mkdir test-repo
+          cd test-repo
+          git init
+
+      - name: create-test-version
+        run: |
+          echo "first commit" >test.txt
+          git add .
+          git commit -m "feat: First feature"
+          git tag 2.1.3
+        working-directory: test-repo
+
+      - name: add-new-test-feature
+        run: |
+          echo "second commit" >>test.txt
+          git add .
+          git commit -m "feat: Second feature"
+        working-directory: test-repo
+
+      - id: bump-version
+        uses: ./armakuni-actions/bump-version
+        with:
+          working-directory: test-repo
+
+      - name: check-previous-version
+        run: |
+          echo "ACTUAL=$actual"
+          echo "EXPECTED=$expected"
+          [ "$actual" == "$expected" ] || exit 1
+        shell: bash
+        env:
+          expected: "2.1.3"
+          actual: ${{ steps.bump-version.outputs.previous-version }}
+
+      - name: check-current-version
+        run: |
+          echo "ACTUAL=$actual"
+          echo "EXPECTED=$expected"
+          [ "$actual" == "$expected" ] || exit 1
+        shell: bash
+        env:
+          expected: "2.2.0"
+          actual: ${{ steps.bump-version.outputs.current-version }}
+
+      - name: check-version-was-bumped
+        run: |
+          echo "ACTUAL=$actual"
+          echo "EXPECTED=$expected"
+          [ "$actual" == "$expected" ] || exit 1
+        shell: bash
+        env:
+          expected: true
+          actual: ${{ steps.bump-version.outputs.version-was-bumped }}

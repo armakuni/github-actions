@@ -1,0 +1,50 @@
+name: Determine Next version_bump
+description: This Github Action calcuates the next Semantic Version for you repository based on Conventional Commits.
+
+inputs:
+  working-directory:
+    description: The root of the git repository that you want to bump the version on.
+    required: false
+
+outputs:
+  previous-version:
+    description: The previous version determined by the existing tag with the heighest SemVer version before the bump.
+    value: ${{ steps.previous-version.outputs.previous-version }}
+  current-version:
+    description: The current version after the bump determined by the conventional commits since the previous release.
+    value: ${{ steps.current-version.outputs.current-version }}
+  version-was-bumped:
+    description: Set to true if the version was bumped.
+    value: ${{ steps.previous-version.outputs.previous-version != steps.current-version.outputs.current-version }}
+
+runs:
+  using: composite
+  steps:
+    - uses: armakuni/github-actions/setup-cocogitto@main
+      with:
+        version: 5.5.0
+    - name: check-commits
+      run: cog check
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+    - id: previous-version
+      run: |
+        cog get-version | tee .version
+        echo "previous-version=$( cat .version )"  >> "$GITHUB_OUTPUT"
+        rm .version
+      working-directory: ${{ inputs.working-directory }}
+      shell: bash
+    - name: determine-next-version
+      run: |
+        git config --global user.name "cog-bot"
+        git config --global user.email "cog@armakuni.com"
+        cog bump --auto
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+    - id: current-version
+      run: |
+        cog get-version | tee .version
+        echo "current-version=$( cat .version )"  >> "$GITHUB_OUTPUT"
+        rm .version
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}

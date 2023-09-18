@@ -1,6 +1,5 @@
 on:
-  push:
-    branches: ["*"]
+  workflow_call:
 
 jobs:
   test-setup-cocogitto-without-version:
