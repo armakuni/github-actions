@@ -1,0 +1,29 @@
+on:
+  workflow_call:
+
+jobs:
+  test-bump-version:
+    name: Test assert-equals
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: test-when-equal
+        uses: ./assert-equals
+        with:
+          expected: abc
+          actual: abc
+
+      - name: test-when-not-equal
+        id: test-when-not-equal
+        uses: ./assert-equals
+        continue-on-error: true
+        with:
+          expected: abc
+          actual: xyz
+
+      - name: assert-failed-when-not-equal
+        if: ${{ steps.test-when-not-equal.outcome != 'failure' }}
+        run: |
+          echo "Expected previous step to fail"
+          exit 1

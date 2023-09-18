@@ -1,0 +1,23 @@
+name: Assert Equals
+description: This Github Action fails if the two given values are not equal.
+
+inputs:
+  actual:
+    description: The value to be checked.
+    required: true
+  expected:
+    description: The the expected value.
+    required: true
+
+runs:
+  using: composite
+  steps:
+      - name: assert-equal
+        run: |
+          echo "ACTUAL=$actual"
+          echo "EXPECTED=$expected"
+          [ "$actual" == "$expected" ] || exit 1
+        shell: bash
+        env:
+          expected: ${{ inputs.expected }}
+          actual: ${{ inputs.actual }}
