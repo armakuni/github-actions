@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.2.1 - 2023-09-18
+#### Bug Fixes
+- Pin versions - (617f627) - Tom Oram
+
+- - -
+
 ## v0.2.0 - 2023-09-18
 #### Continuous Integration
 - Add release workflow - (df76cfb) - Tom Oram
