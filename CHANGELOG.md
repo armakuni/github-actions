@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.2.2 - 2023-09-18
+#### Bug Fixes
+- Don't release if a new version has not been tagged - (ecfeee7) - Tom Oram
+#### Continuous Integration
+- Add all-tests-succeeded collector job - (28a5868) - Tom Oram
+
+- - -
+
 ## v0.2.1 - 2023-09-18
 #### Bug Fixes
 - Pin versions - (617f627) - Tom Oram
