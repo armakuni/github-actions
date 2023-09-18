@@ -1,0 +1,14 @@
+on:
+  workflow_call:
+
+jobs:
+  check-conventional-commits:
+    name: check-conventional-commits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - id: check-conventional-commits
+        uses: armakuni/github-actions/check-conventional-commits@main

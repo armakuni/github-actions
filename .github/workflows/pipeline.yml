@@ -11,3 +11,14 @@ jobs:
     uses: ./.github/workflows/test-bump-version.yml
   test-setup-cocogitto:
     uses: ./.github/workflows/test-setup-cocogitto.yml
+  check-conventional-commits:
+    uses: ./.github/workflows/check-conventional-commits.yml
+  release:
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - test-assert-equals
+      - test-check-conventional-commits
+      - test-bump-version
+      - test-setup-cocogitto
+      - check-conventional-commits
+    uses: ./.github/workflows/tag-and-release.yml

@@ -1,0 +1,35 @@
+on:
+  workflow_call:
+
+jobs:
+  tag-version:
+    name: tag-version
+    runs-on: ubuntu-latest
+    outputs:
+      current-version: ${{ steps.bump-version.outputs.current-version }}
+      version-was-bumped: ${{ steps.bump-version.outputs.version-was-bumped }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - id: bump-version
+        uses: armakuni/github-actions/bump-version@main
+
+  create-release:
+    name: create-release
+    runs-on: ubuntu-latest
+    needs:
+      - tag-version
+    if: ${{ needs.tag-version.outputs.version-was-bumped }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: refs/tags/v${{ needs.tag-version.outputs.current-version }}
+      - name: create-github-release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Release v${{ needs.tag-version.outputs.current-version }}
+          tag: v${{ needs.tag-version.outputs.current-version }}
