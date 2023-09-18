@@ -1,0 +1,53 @@
+on:
+  workflow_call:
+
+jobs:
+  test-check-conventional-commits:
+    name: Test check-conventional-commits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: armakuni-actions
+
+      - name: create-test-repo
+        run: |
+          git config --global user.email "github-actions@armakuni.com"
+          git config --global user.name "AK Actions Bot"
+          mkdir test-repo
+          cd test-repo
+          git init
+
+      - name: create-valid-commits
+        run: |
+          echo "first commit" >test.txt
+          git add .
+          git commit -m "feat: First feature"
+          echo "second commit" >test.txt
+          git add .
+          git commit -m "fix: Second feature"
+        working-directory: test-repo
+
+      - uses: ./armakuni-actions/check-conventional-commits
+        with:
+          working-directory: test-repo
+
+      - name: create-invalid-commit
+        run: |
+          echo "third commit" >>test.txt
+          git add .
+          git commit -m "Third feature"
+        working-directory: test-repo
+
+      - id: check-failure
+        name: check-conventional-commits (should fail)
+        continue-on-error: true
+        uses: ./armakuni-actions/check-conventional-commits
+        with:
+          working-directory: test-repo
+
+      - name: confirm-failure
+        uses: armakuni/github-actions/assert-equals@main
+        with:
+          expected: failure
+          actual: "${{ steps.check-failure.outcome }}"

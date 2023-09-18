@@ -1,0 +1,18 @@
+name: Check Conventional Commits
+description: This Github Action ensures that all commit messages conform to the convential commits format.
+
+inputs:
+  working-directory:
+    description: The root of the git repository that you want to check.
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - uses: armakuni/github-actions/setup-cocogitto@main
+      with:
+        version: 5.5.0
+    - name: check-commits
+      run: cog check
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}

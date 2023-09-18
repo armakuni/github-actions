@@ -5,8 +5,9 @@ on:
 jobs:
   test-assert-equals:
     uses: ./.github/workflows/test-assert-equals.yml
-  test-setup-cocogitto:
-    uses: ./.github/workflows/test-setup-cocogitto.yml
+  test-check-conventional-commits:
+    uses: ./.github/workflows/test-check-conventional-commits.yml
   test-bump-version:
     uses: ./.github/workflows/test-bump-version.yml
-    
+  test-setup-cocogitto:
+    uses: ./.github/workflows/test-setup-cocogitto.yml
