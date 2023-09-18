@@ -1,0 +1,29 @@
+on:
+  push:
+    branches: ["*"]
+
+jobs:
+  test-setup-cocogitto-without-version:
+    name: Test setup-cocogitto (without version)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./setup-cocogitto
+      - run: cog --version
+
+  test-setup-cocogitto-with-version:
+    name: Test setup-cocogitto (with version)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./setup-cocogitto
+        with:
+          version: 5.0.0
+      - id: cocogitto_version
+        run: |
+          installed_version=$(cog --version)
+          if [ $installed_version == "cog 5.0.0"]; then
+            echo "Correct version installed"
+          else
+            echo "Incorrect version installed"
+          fi
