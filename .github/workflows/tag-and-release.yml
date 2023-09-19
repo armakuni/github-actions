@@ -1,5 +1,8 @@
 on:
   workflow_call:
+    secrets:
+      CI_ACCOUNT_SSH_KEY:
+        required: false
 
 jobs:
   tag-version:
@@ -13,6 +16,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          ssh-key: ${{ secrets.CI_ACCOUNT_SSH_KEY }}
       - id: bump-version
         uses: armakuni/github-actions/bump-version@v0.2.0
 

@@ -34,3 +34,4 @@ jobs:
     needs:
       - all-tests-succeeded
     uses: ./.github/workflows/tag-and-release.yml
+    secrets: inherit # automatically passes org secrets without renaming to the template
