@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.4.0 - 2023-09-19
+#### Bug Fixes
+- set working directory for check commit message - (8818e23) - Ben Nagy
+#### Features
+- skip-ci - (f5f0465) - Ben Nagy
+- skip-ci - (4a1922a) - Ben Nagy
+
+- - -
+
 ## v0.3.0 - 2023-09-19
 #### Features
 - run ci on pr - (4aa5067) - Ben Nagy
