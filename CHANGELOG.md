@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.4.1 - 2023-09-19
+#### Bug Fixes
+- Bump the version of bump-version in tag-and-release - (3f00748) - Tom Oram
+
+- - -
+
 ## v0.4.0 - 2023-09-19
 #### Bug Fixes
 - set working directory for check commit message - (8818e23) - Ben Nagy
