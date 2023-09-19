@@ -38,6 +38,10 @@ jobs:
         with:
           working-directory: test-repo
 
+      - name: check-last-commit-message
+        run: |
+          git log -1 --pretty=%B | grep "\[skip ci\]"
+
       - name: check-previous-version
         uses: armakuni/github-actions/assert-equals@v0.2.0
         with:
@@ -55,7 +59,6 @@ jobs:
         with:
           expected: "true"
           actual: "${{ steps.bump-version.outputs.version-was-bumped }}"
-
 
   test-bump-version-with-no-new-version:
     name: Test bump-version (with no new version)
