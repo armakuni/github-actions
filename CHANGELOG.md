@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.3.0 - 2023-09-19
+#### Features
+- run ci on pr - (4aa5067) - Ben Nagy
+- add bypass branch protection functionality using ssh key - (d3bb843) - Ben Nagy
+
+- - -
+
 ## v0.2.3 - 2023-09-18
 #### Bug Fixes
 - Make release only run when tag is added - (633f67a) - Tom Oram
