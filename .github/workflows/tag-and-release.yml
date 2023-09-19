@@ -18,7 +18,7 @@ jobs:
           fetch-tags: true
           ssh-key: ${{ secrets.CI_ACCOUNT_SSH_KEY }}
       - id: bump-version
-        uses: armakuni/github-actions/bump-version@v0.2.0
+        uses: armakuni/github-actions/bump-version@v0.4.0
 
   create-release:
     name: create-release
