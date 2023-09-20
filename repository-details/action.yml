@@ -1,5 +1,5 @@
-name: Determine Next version_bump
-description: This Github Action calcuates the next Semantic Version for you repository based on Conventional Commits.
+name: Get Repository Details
+description: This Github Action returns some details about the current repository.
 
 inputs:
   working-directory:
