@@ -1,0 +1,26 @@
+name: Assume AWS OIDC Role
+description: This Github Action logs into AWS with a using an OIDC role.
+
+inputs:
+  aws-account-id:
+    description: The account ID for the AWS account to log in to.
+    required: true
+  aws-region:
+    description: The AWS region to log in to.
+    required: false
+  role-session-name:
+    description: The name for the role session.
+    required: false
+    default: aws-session
+
+runs:
+  using: composite
+  steps:
+      - id: repository-details
+        uses: armakuni/github-actions/repository-details@v0.5.0
+
+      - uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.aws-account-id }}:role/${{ steps.repository-details.outputs.name }}-github-actions
+          role-session-name: ${{ inputs.role-session-name }}
+          aws-region: ${{ inputs.aws-region }}

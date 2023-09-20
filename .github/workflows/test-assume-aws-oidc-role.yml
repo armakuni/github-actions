@@ -1,0 +1,21 @@
+on:
+  workflow_call:
+
+jobs:
+  test-assume-aws-oidc-role:
+    name: Test assert-equals
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: unfor19/install-aws-cli-action@v1
+        with:
+          arch: amd64
+
+      - uses: ./assume-aws-oidc-role
+        with:
+          aws-account-id: ${{ secrets.ARMAKUNI_AWS_PROD_ACCOUNT_ID }}
+          aws-region: eu-west-3
+
+      - name: check-logged-in
+        run: aws sts get-caller-identity
