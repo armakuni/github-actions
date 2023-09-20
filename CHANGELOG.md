@@ -2,6 +2,20 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.6.0 - 2023-09-20
+#### Bug Fixes
+- Use inputs instead of secrets - (c1c9efd) - Tom Oram
+- Remove unused input from repository-details - (173b6a5) - Tom Oram
+- Correct name and description for repository-details - (5a0930b) - Tom Oram
+#### Continuous Integration
+- Pass secrets to test-assume-aws-oidc-role workflow - (632bb70) - Tom Oram
+#### Documentation
+- Fix usage paths in README files. - (de9eb6c) - Tom Oram
+#### Features
+- Add assume-aws-oidc-role - (99cf6d8) - Tom Oram
+
+- - -
+
 ## v0.5.0 - 2023-09-20
 #### Features
 - Add repository details action - (21c1358) - Tom Oram
