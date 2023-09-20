@@ -15,7 +15,7 @@ The details is provides are:
 ```yaml
 - uses: actions/checkout@v3
 - id: repository-details
-  uses: ./armakuni-actions/repository-details@{current_version}
+  uses: armakuni/github-actions/repository-details@{current_version}
 - run: |
     echo "Owner: ${{ steps.repository-details.outputs.owner }}"
     echo "Name: ${{ steps.repository-details.outputs.name }}"
