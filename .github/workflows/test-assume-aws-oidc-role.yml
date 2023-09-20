@@ -6,7 +6,7 @@ on:
 
 jobs:
   test-assume-aws-oidc-role:
-    name: Test assert-equals
+    name: Test assume-aws-oidc-role
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
