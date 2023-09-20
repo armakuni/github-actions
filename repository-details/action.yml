@@ -1,11 +1,6 @@
 name: Get Repository Details
 description: This Github Action returns some details about the current repository.
 
-inputs:
-  working-directory:
-    description: The root of the git repository that you want to bump the version on.
-    required: false
-
 outputs:
   branch:
     description: The branch.
