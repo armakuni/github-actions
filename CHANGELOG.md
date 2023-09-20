@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.5.0 - 2023-09-20
+#### Features
+- Add repository details action - (21c1358) - Tom Oram
+
+- - -
+
 ## v0.4.1 - 2023-09-19
 #### Bug Fixes
 - Bump the version of bump-version in tag-and-release - (3f00748) - Tom Oram
