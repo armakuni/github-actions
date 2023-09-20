@@ -21,6 +21,6 @@ runs:
 
       - uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.aws-account-id }}:role/${{ steps.repository-details.outputs.name }}-github-actions
+          role-to-assume: arn:aws:iam::${{ inputs.aws-account-id }}:role/${{ steps.repository-details.outputs.name }}-github-actions
           role-session-name: ${{ inputs.role-session-name }}
           aws-region: ${{ inputs.aws-region }}
