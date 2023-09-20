@@ -10,6 +10,8 @@ A collection of reusable Github Actions.
   Bump a repository's sematic version using convential commit messages.
 - [check-conventional-commits](./check-conventional-commits/README.md)
   Fail if any commits in the history do not conform with the convential commits format.
+- [repository-details](./repository-details/)
+  Returns some details about the current repository.
 - [setup-cocogitto](./setup-cocogitto/README.md)
   Install Cocogitto.
 

@@ -16,6 +16,9 @@ jobs:
   test-setup-cocogitto:
     uses: ./.github/workflows/test-setup-cocogitto.yml
 
+  test-repository-details:
+    uses: ./.github/workflows/test-repository-details.yml
+
   check-conventional-commits:
     uses: ./.github/workflows/check-conventional-commits.yml
 
@@ -25,6 +28,7 @@ jobs:
       - test-check-conventional-commits
       - test-bump-version
       - test-setup-cocogitto
+      - test-repository-details
       - check-conventional-commits
     runs-on: ubuntu-latest
     steps:
