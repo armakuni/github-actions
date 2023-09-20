@@ -1,0 +1,39 @@
+name: Determine Next version_bump
+description: This Github Action calcuates the next Semantic Version for you repository based on Conventional Commits.
+
+inputs:
+  working-directory:
+    description: The root of the git repository that you want to bump the version on.
+    required: false
+
+outputs:
+  branch:
+    description: The branch.
+    value: ${{ steps.get-branch.outputs.branch }}
+  owner:
+    description: The user or organisation that owns the repository.
+    value: ${{ steps.get-name.outputs.owner }}
+  name:
+    description: The name of the repository.
+    value: ${{ steps.get-name.outputs.name }}
+
+runs:
+  using: composite
+  steps:
+    - id: get-branch
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> "$GITHUB_OUTPUT"
+      shell: bash
+    - id: get-name
+      run: |
+        full_name="${{ github.repository }}"
+        name=${full_name#*/}
+        owner=${full_name%/*}
+        echo "name=$name" >> "$GITHUB_OUTPUT"
+        echo "owner=$owner" >> "$GITHUB_OUTPUT"
+      shell: bash
+    - name: print
+      run: |
+        echo "branch=${{ steps.get-branch.outputs.branch }}"
+        echo "owner=${{ steps.get-name.outputs.owner }}"
+        echo "name=${{ steps.get-name.outputs.name }}"
+      shell: bash
