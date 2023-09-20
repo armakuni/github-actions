@@ -6,6 +6,8 @@ A collection of reusable Github Actions.
 
 - [assert-equals](./assert-equals/README.md)
   Utility action which fails if two given values are not equal.
+- [assume-aws-oidc-role](./assume-aws-oidc-role/)
+  Log into AWS with a using an OIDC role.
 - [bump-version](./bump-version/README.md)
   Bump a repository's sematic version using convential commit messages.
 - [check-conventional-commits](./check-conventional-commits/README.md)
