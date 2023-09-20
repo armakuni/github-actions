@@ -1,5 +1,8 @@
 on:
   workflow_call:
+    secrets:
+      aws-account-id:
+        required: true
 
 jobs:
   test-assume-aws-oidc-role:
@@ -14,7 +17,7 @@ jobs:
 
       - uses: ./assume-aws-oidc-role
         with:
-          aws-account-id: ${{ secrets.ARMAKUNI_AWS_PROD_ACCOUNT_ID }}
+          aws-account-id: ${{ secrets.aws-account-id }}
           aws-region: eu-west-3
 
       - name: check-logged-in
