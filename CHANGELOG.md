@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.6.1 - 2023-09-21
+#### Bug Fixes
+- Update pipeline permissions for releases - (7f3c4ec) - Tom Oram
+
+- - -
+
 ## v0.6.0 - 2023-09-20
 #### Bug Fixes
 - Use inputs instead of secrets - (c1c9efd) - Tom Oram
