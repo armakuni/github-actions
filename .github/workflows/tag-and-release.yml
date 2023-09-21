@@ -8,6 +8,8 @@ jobs:
   tag-version:
     name: tag-version
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       current-version: ${{ steps.bump-version.outputs.current-version }}
       version-was-bumped: ${{ steps.bump-version.outputs.version-was-bumped }}

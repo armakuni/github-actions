@@ -8,6 +8,9 @@ jobs:
   test-assume-aws-oidc-role:
     name: Test assume-aws-oidc-role
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
 
