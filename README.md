@@ -22,7 +22,7 @@ A collection of reusable Github Actions.
 
 There are also some reusable workflows in the [.github/workflows/](./.github/workflows/) folder.
 
-## Versioning
+## Versioning
 
 Currently, all actions are versioned under on version number.
 In the future, each action is likely to be migrated to its own repository so that

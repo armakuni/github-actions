@@ -3,10 +3,6 @@ on:
     branches: ["*"]
   pull_request:
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   test-assert-equals:
     uses: ./.github/workflows/test-assert-equals.yml
