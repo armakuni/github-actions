@@ -1,0 +1,38 @@
+on:
+  workflow_call:
+    inputs:
+      output-file:
+        type: string
+        description: The path to the file where the documentation will be written
+        required: true
+    
+      working-directory:
+        type: string
+        description: The path to the directory where the terraform module lives
+        required: false
+        default: .
+    
+      artifact-name:
+        type: string
+        description: If provided, the documentation will be uploaded as a artifact with the given name.
+        required: false
+
+jobs:
+  tag-version:
+    name: tag-version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      current-version: ${{ steps.bump-version.outputs.current-version }}
+      version-was-bumped: ${{ steps.bump-version.outputs.version-was-bumped }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: bump-version
+        uses: armakuni/github-actions/generate-terraform-docs@v0.7.0
+        with:
+          output-file: ${{ inputs.output-file }}
+          working-directory: ${{ inputs.working-directory }}
+          artifact-name: ${{ inputs.artifact-name }}
+          
