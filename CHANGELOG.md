@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.0 - 2023-09-25
+#### Features
+- Add generate-terraform-docs workflow - (49a1cda) - Tom Oram
+
+- - -
+
 ## v0.7.0 - 2023-09-25
 #### Features
 - Add download-artifacts option to the tag-and-release workflow - (4a3f546) - Tom Oram
