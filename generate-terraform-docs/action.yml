@@ -1,0 +1,34 @@
+name: Generate Terraform Docs
+description: Generate the documentation for a Terraform module
+
+inputs:
+  output-file:
+    description: The path to the file where the documentation will be written
+    required: true
+
+  working-directory:
+    description: The path to the directory where the terraform module lives
+    required: false
+    default: .
+
+  artifact-name:
+    description: If provided, the documentation will be uploaded as a artifact with the given name.
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Generate documentation
+      uses: terraform-docs/gh-actions@v1.0.0
+      with:
+        working-dir: ${{ inputs.working-directory }}
+        output-file: ${{ inputs.output-file }}
+        output-method: inject
+
+    - name: Upload documentation
+      if: inputs.artifact-name
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.working-directory }}/${{ inputs.output-file }}
+
