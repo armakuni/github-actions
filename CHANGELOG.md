@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.0 - 2023-09-25
+#### Features
+- Add download-artifacts option to the tag-and-release workflow - (4a3f546) - Tom Oram
+- Add generate-terraform-docs action - (e434424) - Tom Oram
+
+- - -
+
 ## v0.6.2 - 2023-09-22
 #### Bug Fixes
 - Make assume-aws-oidc-role require aws-region - (5c148b9) - Tom Oram
