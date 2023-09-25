@@ -27,7 +27,7 @@ jobs:
       current-version: ${{ steps.bump-version.outputs.current-version }}
       version-was-bumped: ${{ steps.bump-version.outputs.version-was-bumped }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - id: bump-version
         uses: armakuni/github-actions/generate-terraform-docs@v0.8.1
