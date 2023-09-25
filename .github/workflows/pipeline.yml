@@ -20,6 +20,9 @@ jobs:
   test-bump-version:
     uses: ./.github/workflows/test-bump-version.yml
 
+  test-generate-terraform-docs:
+    uses: ./.github/workflows/test-generate-terraform-docs.yml
+
   test-setup-cocogitto:
     uses: ./.github/workflows/test-setup-cocogitto.yml
 
@@ -34,6 +37,7 @@ jobs:
       - test-assert-equals
       - test-check-conventional-commits
       - test-bump-version
+      - test-generate-terraform-docs
       - test-setup-cocogitto
       - test-repository-details
       - check-conventional-commits
