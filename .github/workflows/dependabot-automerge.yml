@@ -1,5 +1,10 @@
 on:
   workflow_call:
+    inputs:
+      merge-strategy:
+        description: The strategy to use when merging the PRs (can be 'merge', 'rebase' or 'squash')
+        type: string
+        default: merge
     
 jobs:
   dependabot:
@@ -16,7 +21,7 @@ jobs:
 
     - name: Enable auto-merge for Dependabot PRs
       if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'}}
-      run: gh pr merge --auto --merge "$PR_URL"
+      run: gh pr merge --auto --${{ inputs.merge-strategy }} "$PR_URL"
       env:
         PR_URL: ${{github.event.pull_request.html_url}}
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
