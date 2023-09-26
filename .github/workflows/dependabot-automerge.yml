@@ -1,3 +1,5 @@
+# This workflow is useful for private repos but you will get more functionality
+# by using Mergify for public ones.
 on:
   workflow_call:
     inputs:
