@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.3 - 2023-09-26
+#### Bug Fixes
+- **(deps)** bump armakuni/github-actions from 0.2.0 to 0.8.1 - (33515dd) - dependabot[bot]
+
+- - -
+
 ## v0.8.2 - 2023-09-25
 #### Bug Fixes
 - **(deps)** bump ncipollo/release-action from 1.12.0 to 1.13.0 - (ff054d7) - dependabot[bot]

@@ -10,4 +10,4 @@ jobs:
         with:
           fetch-depth: 0
       - id: check-conventional-commits
-        uses: armakuni/github-actions/check-conventional-commits@v0.2.0
+        uses: armakuni/github-actions/check-conventional-commits@v0.8.1
