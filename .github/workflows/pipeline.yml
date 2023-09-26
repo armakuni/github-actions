@@ -7,6 +7,9 @@ jobs:
   test-assert-equals:
     uses: ./.github/workflows/test-assert-equals.yml
 
+  lint-pipeline:
+    uses: ./.github/workflows/lint-pipeline.yml
+
   test-aws-assume-oidc-role:
     # only the main branch has permissions to log into AWS
     if: github.ref == 'refs/heads/main'
@@ -34,13 +37,14 @@ jobs:
 
   all-tests-succeeded:
     needs:
-      - test-assert-equals
-      - test-check-conventional-commits
-      - test-bump-version
-      - test-generate-terraform-docs
-      - test-setup-cocogitto
-      - test-repository-details
+      - lint-pipeline
       - check-conventional-commits
+      - test-assert-equals
+      - test-bump-version
+      - test-check-conventional-commits
+      - test-generate-terraform-docs
+      - test-repository-details
+      - test-setup-cocogitto
     runs-on: ubuntu-latest
     steps:
       - run: echo OK

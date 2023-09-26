@@ -20,8 +20,8 @@ jobs:
           version: 5.0.0
       - id: cocogitto_version
         run: |
-          installed_version=$(cog --version)
-          if [ $installed_version == "cog 5.0.0"]; then
+          installed_version="$(cog --version)"
+          if [ "$installed_version" == "cog 5.0.0" ] ; then
             echo "Correct version installed"
           else
             echo "Incorrect version installed"
