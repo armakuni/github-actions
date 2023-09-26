@@ -8,6 +8,7 @@ jobs:
     uses: ./.github/workflows/test-assert-equals.yml
 
   lint-pipeline:
+    name: Lint actions and workflows
     uses: ./.github/workflows/lint-pipeline.yml
 
   test-aws-assume-oidc-role:
