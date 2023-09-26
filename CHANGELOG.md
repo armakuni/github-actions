@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.9.0 - 2023-09-26
+#### Bug Fixes
+- Automerge workflow path - (84708ab) - Tom Oram
+#### Features
+- Add dependabot-automerge workflow - (4c62773) - Tom Oram
+
+- - -
+
 ## v0.8.4 - 2023-09-26
 #### Bug Fixes
 - **(deps)** bump actions/checkout from 3 to 4 - (4b7f718) - dependabot[bot]
