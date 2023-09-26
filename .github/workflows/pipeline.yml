@@ -52,11 +52,3 @@ jobs:
       - test-aws-assume-oidc-role
     uses: ./.github/workflows/tag-and-release.yml
     secrets: inherit # automatically passes org secrets without renaming to the template
-
-  dependabot-merge:
-    if: ${{ github.actor == 'dependabot[bot]' && github.ref != 'refs/heads/main' && github.event_name == 'pull_request' }}
-    needs:
-      - all-tests-succeeded
-    uses: ./.github/workflows/dependabot-automerge.yml
-    with:
-      merge-strategy: rebase
