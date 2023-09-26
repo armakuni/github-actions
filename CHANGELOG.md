@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.4 - 2023-09-26
+#### Bug Fixes
+- **(deps)** bump actions/checkout from 3 to 4 - (4b7f718) - dependabot[bot]
+
+- - -
+
 ## v0.8.3 - 2023-09-26
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.2.0 to 0.8.1 - (33515dd) - dependabot[bot]
