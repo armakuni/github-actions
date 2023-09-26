@@ -57,6 +57,6 @@ jobs:
     if: ${{ github.actor == 'dependabot[bot]' && github.ref != 'refs/heads/main' && github.event_name == 'pull_request' }}
     needs:
       - all-tests-succeeded
-    uses: ./github/workflows/dependabot-automerge.yml
+    uses: ./.github/workflows/dependabot-automerge.yml
     with:
       merge-strategy: rebase
