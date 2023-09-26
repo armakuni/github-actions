@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.10.0 - 2023-09-26
+#### Bug Fixes
+- Automerge workflow path - (e2d5f0e) - Tom Oram
+#### Features
+- Add merge-strategy option to dependabot-merge workflow - (fafb109) - Tom Oram
+
+- - -
+
 ## v0.9.0 - 2023-09-26
 #### Bug Fixes
 - Automerge workflow path - (84708ab) - Tom Oram
