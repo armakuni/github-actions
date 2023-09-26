@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.10.1 - 2023-09-26
+#### Bug Fixes
+- **(deps)** bump armakuni/github-actions from 0.8.1 to 0.10.0 - (1bdce42) - dependabot[bot]
+#### Continuous Integration
+- Remove job to merge dependabot (using Mergify now instead) - (9c358c9) - Tom Oram
+- Downgrade checkout to test mergify - (e4218ee) - Tom Oram
+- Add mergify - (3a266f9) - Tom Oram
+
+- - -
+
 ## v0.10.0 - 2023-09-26
 #### Bug Fixes
 - Automerge workflow path - (e2d5f0e) - Tom Oram
