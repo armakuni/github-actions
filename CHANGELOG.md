@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.10.3 - 2023-09-26
+#### Bug Fixes
+- Add a name for the lint pipeline - (9a48074) - Billie Thompson
+#### Tests
+- Add pipeline lint pipeline - (316ead8) - Billie Thompson
+
+- - -
+
 ## v0.10.2 - 2023-09-26
 #### Bug Fixes
 - **(deps)** bump actions/checkout from 3 to 4 - (c9f3fba) - dependabot[bot]
