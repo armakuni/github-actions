@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.10.4 - 2023-09-26
+#### Bug Fixes
+- Add a name for the lint action - (2df72ed) - Billie Thompson
+
+- - -
+
 ## v0.10.3 - 2023-09-26
 #### Bug Fixes
 - Add a name for the lint pipeline - (9a48074) - Billie Thompson
