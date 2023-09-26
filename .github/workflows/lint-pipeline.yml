@@ -1,6 +1,8 @@
 on:
   workflow_call:
 
+name: Lint actions and workflows
+
 jobs:
   lint-pipeline:
     runs-on: ubuntu-latest
