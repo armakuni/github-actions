@@ -31,7 +31,7 @@ jobs:
           path: repo-to-release
 
       - id: bump-version
-        uses: armakuni/github-actions/bump-version@v0.10.4
+        uses: armakuni/github-actions/bump-version@v0.10.5
         with:
           working-directory: repo-to-release
 
