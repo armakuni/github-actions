@@ -56,11 +56,19 @@ jobs:
         with:
           ref: refs/tags/v${{ needs.tag-version.outputs.current-version }}
 
+      - uses: armakuni/github-actions/setup-cocogitto@v0.2.0
+        with:
+          version: 5.5.0
+
+      - name: Generate Changelog
+        run: cog changelog --at ${{ needs.tag-version.outputs.current-version }} -t full_hash > GITHUB_CHANGELOG.md
+
       - name: create-github-release
         uses: ncipollo/release-action@v1.13.0
         with:
           allowUpdates: true
           artifacts: ${{ inputs.release-artifacts }}
+          bodyFile: GITHUB_CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Release v${{ needs.tag-version.outputs.current-version }}
           tag: v${{ needs.tag-version.outputs.current-version }}
