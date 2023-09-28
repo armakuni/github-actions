@@ -36,6 +36,14 @@ jobs:
   check-conventional-commits:
     uses: ./.github/workflows/check-conventional-commits.yml
 
+  output-conventional-commits:
+    needs:
+      - check-conventional-commits
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.check-conventional-commits.outputs.bump-version }}
+      - run: echo ${{ needs.check-conventional-commits.outputs.will-bump }}
+
   all-tests-succeeded:
     needs:
       - lint-pipeline
