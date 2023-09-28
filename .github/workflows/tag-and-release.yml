@@ -16,6 +16,13 @@ on:
         type: string
         description: Prefix for the version number
         default: 'v'
+    outputs:
+      current-version:
+        description: The current version after the bump
+        value: ${{ jobs.tag-version.outputs.current-version }}
+      version-was-bumped:
+        description: Set to true if the version was bumped
+        value: ${{ jobs.tag-version.outputs.version-was-bumped }}
 
 jobs:
   tag-version:
