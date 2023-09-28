@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.12.0 - 2023-09-28
+#### Features
+- Add ouputs to tag-and-release workflow - (02a8bd1) - Tom Oram
+- Add version-prefix input to release-and-tag workflow - (5d42c24) - Tom Oram
+
+- - -
+
 ## v0.11.0 - 2023-09-28
 #### Bug Fixes
 - Download release artifacts - (db01de0) - Tom Oram
