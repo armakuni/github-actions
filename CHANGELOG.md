@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.11.0 - 2023-09-28
+#### Bug Fixes
+- Download release artifacts - (db01de0) - Tom Oram
+#### Features
+- Add release notes - (8b8d65f) - Tom Oram
+- Allow uploading of artifacts to releases - (9a988d6) - Tom Oram
+
+- - -
+
 ## v0.10.6 - 2023-09-27
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.10.4 to 0.10.5 - (bfd7b2a) - dependabot[bot]
