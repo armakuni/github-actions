@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.14.0 - 2023-09-28
+#### Features
+- Add outputs to check-conventional-commits workflow - (dbfc6c5) - Tom Oram
+
+- - -
+
 ## v0.13.0 - 2023-09-28
 #### Features
 - Add outputs to check-conventional-commits - (f79b605) - Tom Oram
