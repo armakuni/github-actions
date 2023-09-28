@@ -6,13 +6,30 @@ inputs:
     description: The root of the git repository that you want to check.
     required: false
 
+outputs:
+  will-bump:
+    value: ${{ steps.get-bump-version.outputs.bump-version != '' }}
+    description: Returns 'true' when the version will bump
+  bump-version:
+    value: ${{ steps.get-bump-version.outputs.bump-version }}
+    description: Returns 'true' when the version will bump
+
 runs:
   using: composite
   steps:
     - uses: armakuni/github-actions/setup-cocogitto@main
       with:
         version: 5.5.0
+
     - name: check-commits
       run: cog check
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+
+    - id: get-bump-version
+      run: |
+        if cog bump --auto --dry-run; then
+          echo "bump-version=$(cog bump --auto --dry-run)" >> "$GITHUB_OUTPUT"
+        fi
       shell: bash
       working-directory: ${{ inputs.working-directory }}

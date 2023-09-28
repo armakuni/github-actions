@@ -51,3 +51,88 @@ jobs:
         with:
           expected: failure
           actual: "${{ steps.check-failure.outcome }}"
+
+  test-check-conventional-when-nothing-to-bump:
+    name: Test check-conventional-commits when nothing to bump
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: armakuni-actions
+
+      - name: create-test-repo
+        run: |
+          git config --global user.email "github-actions@armakuni.com"
+          git config --global user.name "AK Actions Bot"
+          mkdir test-repo
+          cd test-repo
+          git init
+
+      - name: create-valid-commits
+        run: |
+          echo "first commit" >test.txt
+          git add .
+          git commit -m "feat: First feature"
+          git tag 0.1.0
+        working-directory: test-repo
+
+      - id: check-conventional-commits
+        uses: ./armakuni-actions/check-conventional-commits
+        with:
+          working-directory: test-repo
+
+      - name: confirm-bump-version-is-empty
+        uses: armakuni/github-actions/assert-equals@v0.10.5
+        with:
+          expected: 
+          actual: "${{ steps.check-conventional-commits.outputs.bump-version }}"
+
+      - name: confirm-will-bump-is-false
+        uses: armakuni/github-actions/assert-equals@v0.10.5
+        with:
+          expected: 'false'
+          actual: "${{ steps.check-conventional-commits.outputs.will-bump }}"
+
+  test-check-conventional-when-something-to-bump:
+    name: Test check-conventional-commits when something to bump
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: armakuni-actions
+
+      - name: create-test-repo
+        run: |
+          git config --global user.email "github-actions@armakuni.com"
+          git config --global user.name "AK Actions Bot"
+          mkdir test-repo
+          cd test-repo
+          git init
+
+      - name: create-valid-commits
+        run: |
+          echo "first commit" >test.txt
+          git add .
+          git commit -m "feat: First feature"
+          git tag 0.1.0
+          echo "second commit" >test.txt
+          git add .
+          git commit -m "feat: First feature"
+        working-directory: test-repo
+
+      - id: check-conventional-commits
+        uses: ./armakuni-actions/check-conventional-commits
+        with:
+          working-directory: test-repo
+
+      - name: confirm-bump-version-is-next-semver
+        uses: armakuni/github-actions/assert-equals@v0.10.5
+        with:
+          expected: '0.2.0'
+          actual: "${{ steps.check-conventional-commits.outputs.bump-version }}"
+  
+      - name: confirm-will-bump-is-true
+        uses: armakuni/github-actions/assert-equals@v0.10.5
+        with:
+          expected: 'true'
+          actual: "${{ steps.check-conventional-commits.outputs.will-bump }}"
