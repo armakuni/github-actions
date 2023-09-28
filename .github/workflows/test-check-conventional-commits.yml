@@ -51,3 +51,55 @@ jobs:
         with:
           expected: failure
           actual: "${{ steps.check-failure.outcome }}"
+
+
+  test-check-conventional-commits-from-latest-tag:
+    name: Test check-conventional-commits only from the latest tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: armakuni-actions
+
+      - name: create-test-repo
+        run: |
+          git config --global user.email "github-actions@armakuni.com"
+          git config --global user.name "AK Actions Bot"
+          mkdir test-repo
+          cd test-repo
+          git init
+
+      - name: create-valid-commits
+        run: |
+          echo "first commit" >test.txt
+          git add .
+          git commit -m "First feature (not conventional)"
+          git tag v0.1.0
+          echo "second commit" >test.txt
+          git add .
+          git commit -m "fix: Second feature"
+        working-directory: test-repo
+
+      - uses: ./armakuni-actions/check-conventional-commits
+        with:
+          working-directory: test-repo
+
+      - name: create-invalid-commit
+        run: |
+          echo "third commit" >>test.txt
+          git add .
+          git commit -m "Third feature"
+        working-directory: test-repo
+
+      - id: check-failure
+        name: check-conventional-commits (should fail)
+        continue-on-error: true
+        uses: ./armakuni-actions/check-conventional-commits
+        with:
+          working-directory: test-repo
+
+      - name: confirm-failure
+        uses: armakuni/github-actions/assert-equals@v0.10.5
+        with:
+          expected: failure
+          actual: "${{ steps.check-failure.outcome }}"
