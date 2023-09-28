@@ -7,7 +7,11 @@ on:
       download-artifacts:
         type: boolean
         description: Set to "true" if you want all artifacts downloaded before bumping (this is useful if you want to add something to the bump commit from a previous job).
-        
+      release-artifacts:
+        type: string
+        description: An optional set of paths representing artifacts to upload to the release. This may be a single path or a comma delimited list of paths (or globs)
+        required: false
+        default: ''
 
 jobs:
   tag-version:
@@ -51,6 +55,7 @@ jobs:
         uses: ncipollo/release-action@v1.13.0
         with:
           allowUpdates: true
+          artifacts: ${{ inputs.release-artifacts }}
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Release v${{ needs.tag-version.outputs.current-version }}
           tag: v${{ needs.tag-version.outputs.current-version }}
