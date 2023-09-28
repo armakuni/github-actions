@@ -1,10 +1,21 @@
 on:
   workflow_call:
+    outputs:
+      will-bump:
+        value: ${{ jobs.check-conventional-commits.outputs.will-bump }}
+        description: Returns 'true' when the version will bump
+      bump-version:
+        value: ${{ jobs.check-conventional-commits.outputs.bump-version }}
+        description: Returns 'true' when the version will bump
+
 
 jobs:
   check-conventional-commits:
     name: check-conventional-commits
     runs-on: ubuntu-latest
+    outputs:
+      will-bump: ${{ steps.check-conventional-commits.outputs.will-bump }}
+      bump-version: ${{ steps.check-conventional-commits.outputs.bump-version }}
     steps:
       - uses: actions/checkout@v4
         with:
