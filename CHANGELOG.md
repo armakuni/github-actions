@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.14.2 - 2023-09-28
+#### Bug Fixes
+- Move artifact downloading to after checkout - (9934f54) - Tom Oram
+
+- - -
+
 ## v0.14.1 - 2023-09-28
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.2.0 to 0.14.0 - (6f7f501) - dependabot[bot]
