@@ -52,7 +52,7 @@ jobs:
           expected: failure
           actual: "${{ steps.check-failure.outcome }}"
 
-  test-check-conventional-when-nothing-to-bump:
+  test-check-conventional-when-no-new-commits:
     name: Test check-conventional-commits when nothing to bump
     runs-on: ubuntu-latest
     steps:
@@ -74,6 +74,50 @@ jobs:
           git add .
           git commit -m "feat: First feature"
           git tag 0.1.0
+        working-directory: test-repo
+
+      - id: check-conventional-commits
+        uses: ./armakuni-actions/check-conventional-commits
+        with:
+          working-directory: test-repo
+
+      - name: confirm-bump-version-is-empty
+        uses: armakuni/github-actions/assert-equals@v0.14.0
+        with:
+          expected: 
+          actual: "${{ steps.check-conventional-commits.outputs.bump-version }}"
+
+      - name: confirm-will-bump-is-false
+        uses: armakuni/github-actions/assert-equals@v0.14.0
+        with:
+          expected: 'false'
+          actual: "${{ steps.check-conventional-commits.outputs.will-bump }}"
+
+  test-check-conventional-when-only-non-bumping-commits:
+    name: Test check-conventional-commits when nothing to bump
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: armakuni-actions
+
+      - name: create-test-repo
+        run: |
+          git config --global user.email "github-actions@armakuni.com"
+          git config --global user.name "AK Actions Bot"
+          mkdir test-repo
+          cd test-repo
+          git init
+
+      - name: create-valid-commits
+        run: |
+          echo "first commit" >test.txt
+          git add .
+          git commit -m "feat: First feature"
+          git tag 0.1.0
+          echo "second commit" >test.txt
+          git add .
+          git commit -m "docs: Second commit (docs will not cause a bump)"
         working-directory: test-repo
 
       - id: check-conventional-commits
