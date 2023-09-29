@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.14.3 - 2023-09-29
+#### Bug Fixes
+- Don't error when check-conventional-commits is run with only non-bumping commits - (7f4b075) - Tom Oram
+
+- - -
+
 ## v0.14.2 - 2023-09-28
 #### Bug Fixes
 - Move artifact downloading to after checkout - (9934f54) - Tom Oram
