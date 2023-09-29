@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.14.4 - 2023-09-29
+#### Bug Fixes
+- **(deps)** bump armakuni/github-actions from 0.14.0 to 0.14.3 - (0dc3ff4) - dependabot[bot]
+
+- - -
+
 ## v0.14.3 - 2023-09-29
 #### Bug Fixes
 - Don't error when check-conventional-commits is run with only non-bumping commits - (7f4b075) - Tom Oram
