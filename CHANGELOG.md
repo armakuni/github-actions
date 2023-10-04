@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.14.8 - 2023-10-04
+#### Bug Fixes
+- **(deps)** bump armakuni/github-actions from 0.14.5 to 0.14.7 - (3e7278b) - dependabot[bot]
+
+- - -
+
 ## v0.14.7 - 2023-10-04
 #### Bug Fixes
 - Handle the initial release where there is no existing version - (de7b461) - Billie Thompson
