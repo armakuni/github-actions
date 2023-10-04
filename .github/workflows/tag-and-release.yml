@@ -46,7 +46,7 @@ jobs:
           path: repo-to-release
 
       - id: bump-version
-        uses: armakuni/github-actions/bump-version@v0.14.5
+        uses: armakuni/github-actions/bump-version@v0.14.7
         with:
           working-directory: repo-to-release
 
@@ -63,7 +63,7 @@ jobs:
           fetch-tags: true # For the changelog
           ref: refs/tags/v${{ needs.tag-version.outputs.current-version }}
 
-      - uses: armakuni/github-actions/setup-cocogitto@v0.14.5
+      - uses: armakuni/github-actions/setup-cocogitto@v0.14.7
         with:
           version: 5.5.0
 
