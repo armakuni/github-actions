@@ -25,7 +25,7 @@ runs:
         version: 5.5.0
     - id: previous-version
       run: |
-        cog get-version | tee .version
+        cog get-version | tee .version || echo "0.0.0" | tee .version
         echo "previous-version=$( cat .version )"  >> "$GITHUB_OUTPUT"
         rm .version
       working-directory: ${{ inputs.working-directory }}
