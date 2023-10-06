@@ -43,17 +43,20 @@ jobs:
         name: Setup Terraform
         with:
           terraform_version: ${{ inputs.terraform-version }}
-      - uses: ./../../setup-terragrunt
+      - uses: armakuni/github-actions/setup-terragrunt@v0.15.4
         if: ${{ inputs.use-terragrunt }}
         name: Setup Terragrunt
         with:
           version: ${{ inputs.terragrunt-version }}
       - name: Terraform fmt
+        shell: bash
         working-directory: ${{ inputs.working-directory }}
         run: ${{ steps.binary_name.outputs.bin_name }} fmt -check -diff -recursive
       - name: Terraform Init
+        shell: bash
         working-directory: ${{ inputs.working-directory }}
         run: ${{ steps.binary_name.outputs.bin_name }} init
       - name: Terraform Validate
+        shell: bash
         working-directory: ${{ inputs.working-directory }}
         run: ${{ steps.binary_name.outputs.bin_name }} validate
