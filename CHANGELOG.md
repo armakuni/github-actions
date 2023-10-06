@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.2 - 2023-10-06
+#### Bug Fixes
+- Linting - (780e142) - Billie Thompson
+- Allow the usage of terragrunt, currently it is always disabled - (531df52) - Billie Thompson
+#### Documentation
+- Add a note about the terragrunt action - (d20db07) - Billie Thompson
+
+- - -
+
 ## v0.15.1 - 2023-10-06
 #### Bug Fixes
 - Remove the preceeding "v" from the version number - (657db06) - Billie Thompson
