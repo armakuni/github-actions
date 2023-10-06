@@ -34,7 +34,7 @@ jobs:
             echo "bin_name=terraform" >> "$GITHUB_OUTPUT"
           fi
         env:
-          USE_TERRAGRUNT: ${{ github.event.inputs.use-terragrunt && "true" || "false" }}
+          USE_TERRAGRUNT: ${{ github.event.inputs.use-terragrunt && 'true' || 'false' }}
         shell: bash
         id: binary_name
       - uses: actions/checkout@v4
