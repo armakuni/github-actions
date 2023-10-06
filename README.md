@@ -16,6 +16,8 @@ A collection of reusable Github Actions.
   Returns some details about the current repository.
 - [setup-cocogitto](./setup-cocogitto/README.md)
   Install Cocogitto.
+- [setup-terragrunt](./setup-terragrunt/README.md)
+  Install Terragrunt.
 
 
 ## Workflows
