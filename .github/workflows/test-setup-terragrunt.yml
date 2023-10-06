@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./setup-terragrunt
-      - run: cog --version
+      - run: terragrunt --version
 
   test-setup-terragrunt-with-version:
     name: Test setup-terragrunt (with version)
