@@ -32,3 +32,15 @@ jobs:
         with:
           expected: 0.51.8
           actual: ${{ steps.setup-terragrunt.outputs.version }}
+
+  test-setup-terragrunt-sets-non-interactive-env:
+    name: Setup terragrunt sets non interactive mode
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./setup-terragrunt
+      - name: Check output version number matches
+        uses: ./assert-equals
+        with:
+          expected: true
+          actual: ${{ env.TERRAGRUNT_NON_INTERACTIVE }}

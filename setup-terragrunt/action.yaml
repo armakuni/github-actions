@@ -20,7 +20,7 @@ runs:
         GITHUB_TOKEN: ${{ github.token }}
         GITHUB_ACTOR: ${{ github.actor }}
       run: |
-        set -xeuo pipefail
+        set -euo pipefail
         
         if [ "$TERRAGRUNT_VERSION" == "latest" ]; then
             TERRAGRUNT_URL="https://github.com/gruntwork-io/terragrunt/releases/latest/download/"
@@ -48,6 +48,9 @@ runs:
         echo "$RUNNER_TEMP/terragrunt-bin" >> "$GITHUB_PATH"
         echo "version=$( "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX" --version | cut -d " " -f3 | cut -c2- )" >> "$GITHUB_OUTPUT"
       shell: bash
+    - shell: bash
+      name: Set non-interactive mode for terragrunt
+      run: echo "TERRAGRUNT_NON_INTERACTIVE=true" >> "$GITHUB_ENV"
     - name: Print version
       shell: bash
       run: terragrunt --version
