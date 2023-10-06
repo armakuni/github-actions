@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.10 - 2023-10-06
+#### Bug Fixes
+- Try string cast trick again - (31069a1) - Billie Thompson
+
+- - -
+
 ## v0.15.9 - 2023-10-06
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.15.5 to 0.15.8 - (9df8473) - dependabot[bot]
