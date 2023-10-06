@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.4 - 2023-10-06
+#### Bug Fixes
+- Correct input read location - (fd40103) - Billie Thompson
+
+- - -
+
 ## v0.15.3 - 2023-10-06
 #### Bug Fixes
 - GitHub does not handle booleans in workflows - (9dd844a) - Billie Thompson
