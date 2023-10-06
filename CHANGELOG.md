@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.18 - 2023-10-06
+#### Bug Fixes
+- Correct the scan type to FS - (b87c4c4) - Billie Thompson
+
+- - -
+
 ## v0.15.17 - 2023-10-06
 #### Bug Fixes
 - Inputs should be scan-ref for trivy - (58d724c) - Billie Thompson
