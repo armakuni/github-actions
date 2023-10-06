@@ -2,10 +2,12 @@ on:
   workflow_call:
     inputs:
       use-terragrunt:
+        # Note: this is a string, not a boolean as booleans are not supported well in worflow_calls
+        # If you are reading, you might want to check if that has changed yet, as it is a bug in github actions
         description: 'Set to "true" if you want to use Terragrunt'
         required: false
-        default: false
-        type: boolean
+        default: 'false'
+        type: string
       terragrunt-version:
         description: 'The version of Terragrunt to install'
         required: false
@@ -34,8 +36,6 @@ jobs:
             echo "bin_name=terraform" >> "$GITHUB_OUTPUT"
           fi
         env:
-          # Note: this is a string, not a boolean as booleans are not supported well in worflow_calls
-          # If you are reading, you might want to check if that has changed yet, as it is a bug in github actions
           USE_TERRAGRUNT: ${{ inputs.use-terragrunt == 'true' && 'true' || 'false' }}
         shell: bash
         id: binary_name
