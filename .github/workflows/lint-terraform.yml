@@ -23,7 +23,6 @@ on:
         required: false
         type: string
         default: '.'
-
 jobs:
   lint:
     name: Lint terraform
@@ -60,3 +59,18 @@ jobs:
         if: ${{ steps.binary_name.outputs.bin_name == 'terragrunt' }}
         working-directory: ${{ inputs.working-directory }}
         run: terragrunt hclfmt --terragrunt-check --terragrunt-diff
+
+      - name: Check for critical vulnerabilities in terraform code
+        uses: aquasecurity/trivy-action@master
+        with:
+          scanners: 'config'
+          exit-code: '1'
+          input: ${{ inputs.working-directory }}
+          severity: 'CRITICAL'
+
+      - name: Warn for other vulnerabilities in terraform code
+        uses: aquasecurity/trivy-action@master
+        with:
+          scanners: 'config'
+          exit-code: '0'
+          input: ${{ inputs.working-directory }}
