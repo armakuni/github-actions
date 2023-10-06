@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.19 - 2023-10-06
+#### Bug Fixes
+- Change scan type to config - (f41f918) - Billie Thompson
+
+- - -
+
 ## v0.15.18 - 2023-10-06
 #### Bug Fixes
 - Correct the scan type to FS - (b87c4c4) - Billie Thompson
