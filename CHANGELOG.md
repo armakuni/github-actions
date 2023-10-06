@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.16 - 2023-10-06
+#### Bug Fixes
+- Add linting for terraform for security vulnerabilities - (dea8f59) - Billie Thompson
+#### Refactoring
+- Formatting for terraform docs resources - (69a409d) - Billie Thompson
+
+- - -
+
 ## v0.15.15 - 2023-10-06
 #### Bug Fixes
 - Remove checks that require secrets - (bb904cd) - Billie Thompson
