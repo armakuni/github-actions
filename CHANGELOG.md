@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.1 - 2023-10-06
+#### Bug Fixes
+- Remove the preceeding "v" from the version number - (657db06) - Billie Thompson
+#### Continuous Integration
+- Add test for the version output - (15780ab) - Billie Thompson
+
+- - -
+
 ## v0.15.0 - 2023-10-06
 #### Continuous Integration
 - Correct name of command in pipeline - (c4495ce) - Billie Thompson
