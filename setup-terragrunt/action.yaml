@@ -46,7 +46,7 @@ runs:
         curl -u "$GITHUB_ACTOR:$GITHUB_TOKEN" -Lo "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX" "$TERRAGRUNT_URL"
         chmod +x "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX"
         echo "$RUNNER_TEMP/terragrunt-bin/" >> "$GITHUB_PATH"
-        echo "version=$( "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX" --version | cut -d " " -f3 )" >> "$GITHUB_OUTPUT"
+        echo "version=$( "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX" --version | cut -d " " -f3 | cut -c2- )" >> "$GITHUB_OUTPUT"
       shell: bash
 
 branding:
