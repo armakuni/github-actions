@@ -1,0 +1,28 @@
+on:
+  workflow_call:
+
+jobs:
+  test-setup-terragrunt-without-version:
+    name: Test setup-terragrunt (without version)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./setup-terragrunt
+      - run: cog --version
+
+  test-setup-terragrunt-with-version:
+    name: Test setup-terragrunt (with version)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./setup-terragrunt
+        with:
+          version: 0.51.8
+      - id: terragrunt_version
+        run: |
+          installed_version="$(terragrunt --version)"
+          if [ "$installed_version" == "terragrunt version 0.51.8" ] ; then
+            echo "Correct version installed"
+          else
+            echo "Incorrect version installed"
+          fi

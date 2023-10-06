@@ -1,0 +1,55 @@
+name: Setup Terragrunt Action
+description: Setup the Terragrunt on the path
+inputs:
+  version:
+    description: Version of Terragrunt to install
+    required: false
+    default: 'latest'
+outputs:
+  version:
+    description: The version on the path
+    value: ${{ steps.install.outputs.version }}
+
+runs:
+  using: composite
+  steps:
+    - name: Install Terragrunt
+      id: install
+      env:
+        TERRAGRUNT_VERSION: ${{ inputs.version }}
+        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_ACTOR: ${{ github.actor }}
+      run: |
+        set -euo pipefail
+        
+        if [ "$TERRAGRUNT_VERSION" == "latest" ]; then
+            TERRAGRUNT_URL="https://github.com/gruntwork-io/terragrunt/releases/latest/download/"
+        else
+            TERRAGRUNT_URL="https://github.com/gruntwork-io/terragrunt/releases/download/v$TERRAGRUNT_VERSION/"
+        fi
+        
+        if [ "$RUNNER_OS" == "Linux" ]; then
+             TERRAGRUNT_URL="$TERRAGRUNT_URL/terragrunt_linux_amd64"
+             BINARY_SUFFIX=""
+        elif [ "$RUNNER_OS" == "Windows" ]; then
+             TERRAGRUNT_URL="$TERRAGRUNT_URL/terragrunt_windows_amd64.exe"
+             BINARY_SUFFIX=".exe"
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+             TERRAGRUNT_URL="$TERRAGRUNT_URL/terragrunt_darwin_amd64"
+             BINARY_SUFFIX=""
+        else
+             echo "$RUNNER_OS not supported"
+             exit 1
+        fi
+        
+        mkdir -p "$RUNNER_TEMP/terragrunt-bin"
+        curl -u "$GITHUB_ACTOR:$GITHUB_TOKEN" -Lo "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX" "$TERRAGRUNT_URL"
+        chmod +x "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX"
+        echo "$RUNNER_TEMP/terragrunt-bin/" >> "$GITHUB_PATH"
+        echo "version=$( "$RUNNER_TEMP/terragrunt-bin/terragrunt$BINARY_SUFFIX" --version | cut -d " " -f3 )" >> "$GITHUB_OUTPUT"
+      shell: bash
+
+branding:
+  icon: 'award'
+  color: 'purple'
+

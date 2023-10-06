@@ -30,6 +30,9 @@ jobs:
   test-setup-cocogitto:
     uses: ./.github/workflows/test-setup-cocogitto.yml
 
+  test-setup-terragrunt:
+    uses: ./.github/workflows/test-setup-terragrunt.yml
+
   test-repository-details:
     uses: ./.github/workflows/test-repository-details.yml
 
@@ -38,14 +41,15 @@ jobs:
 
   all-tests-succeeded:
     needs:
-      - lint-pipeline
       - check-conventional-commits
+      - lint-pipeline
       - test-assert-equals
       - test-bump-version
       - test-check-conventional-commits
       - test-generate-terraform-docs
       - test-repository-details
       - test-setup-cocogitto
+      - test-setup-terragrunt
     runs-on: ubuntu-latest
     steps:
       - run: echo OK
