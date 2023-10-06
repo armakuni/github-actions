@@ -34,7 +34,7 @@ jobs:
             echo "bin_name=terraform" >> "$GITHUB_OUTPUT"
           fi
         env:
-          USE_TERRAGRUNT: ${{ github.event.inputs.use-terragrunt == 'true' && 'true' || 'false' }}
+          USE_TERRAGRUNT: ${{ inputs.use-terragrunt == 'true' && 'true' || 'false' }}
         shell: bash
         id: binary_name
       - uses: actions/checkout@v4
@@ -42,18 +42,18 @@ jobs:
       - uses: hashicorp/setup-terraform@v2
         name: Setup Terraform
         with:
-          terraform_version: ${{ github.event.inputs.terraform-version }}
+          terraform_version: ${{ inputs.terraform-version }}
       - uses: ./../../setup-terragrunt
-        if: ${{ github.event.inputs.use-terragrunt }}
+        if: ${{ inputs.use-terragrunt }}
         name: Setup Terragrunt
         with:
-          version: ${{ github.event.inputs.terragrunt-version }}
+          version: ${{ inputs.terragrunt-version }}
       - name: Terraform fmt
-        working-directory: ${{ github.event.inputs.working-directory }}
+        working-directory: ${{ inputs.working-directory }}
         run: ${{ steps.binary_name.outputs.bin_name }} fmt -check -diff -recursive
       - name: Terraform Init
-        working-directory: ${{ github.event.inputs.working-directory }}
+        working-directory: ${{ inputs.working-directory }}
         run: ${{ steps.binary_name.outputs.bin_name }} init
       - name: Terraform Validate
-        working-directory: ${{ github.event.inputs.working-directory }}
+        working-directory: ${{ inputs.working-directory }}
         run: ${{ steps.binary_name.outputs.bin_name }} validate
