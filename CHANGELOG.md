@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.7 - 2023-10-06
+#### Bug Fixes
+- Correct inverted true and false in terraform wrapper - (3a3962f) - Billie Thompson
+- Disable terraform wrapper if terragrunt is being installed - (5b72a7e) - Billie Thompson
+#### Refactoring
+- Standardise use-terragrunt check - (0a0ae49) - Billie Thompson
+
+- - -
+
 ## v0.15.6 - 2023-10-06
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.14.10 to 0.15.5 - (aa39016) - dependabot[bot]
