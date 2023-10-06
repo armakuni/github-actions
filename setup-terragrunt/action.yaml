@@ -20,7 +20,7 @@ runs:
         GITHUB_TOKEN: ${{ github.token }}
         GITHUB_ACTOR: ${{ github.actor }}
       run: |
-        set -euo pipefail
+        set -xeuo pipefail
         
         if [ "$TERRAGRUNT_VERSION" == "latest" ]; then
             TERRAGRUNT_URL="https://github.com/gruntwork-io/terragrunt/releases/latest/download/"
