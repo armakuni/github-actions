@@ -34,7 +34,7 @@ jobs:
             echo "bin_name=terraform" >> "$GITHUB_OUTPUT"
           fi
         env:
-          USE_TERRAGRUNT: ${{ github.event.inputs.use-terragrunt }}
+          USE_TERRAGRUNT: ${{ github.event.inputs.use-terragrunt && "true" || "false" }}
         shell: bash
         id: binary_name
       - uses: actions/checkout@v4
@@ -44,7 +44,7 @@ jobs:
         with:
           terraform_version: ${{ github.event.inputs.terraform-version }}
       - uses: ./../../setup-terragrunt
-        if: ${{ github.event.inputs.use-terragrunt == 'true' }}
+        if: ${{ github.event.inputs.use-terragrunt }}
         name: Setup Terragrunt
         with:
           version: ${{ github.event.inputs.terragrunt-version }}
