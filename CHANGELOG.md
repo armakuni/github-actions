@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.0 - 2023-10-06
+#### Continuous Integration
+- Correct name of command in pipeline - (c4495ce) - Billie Thompson
+#### Features
+- Add a terraform linting workflow - (8bb224e) - Billie Thompson
+
+- - -
+
 ## v0.14.11 - 2023-10-05
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.14.9 to 0.14.10 - (df3c22f) - dependabot[bot]
