@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.17 - 2023-10-06
+#### Bug Fixes
+- Inputs should be scan-ref for trivy - (58d724c) - Billie Thompson
+
+- - -
+
 ## v0.15.16 - 2023-10-06
 #### Bug Fixes
 - Add linting for terraform for security vulnerabilities - (dea8f59) - Billie Thompson
