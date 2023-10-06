@@ -63,8 +63,7 @@ jobs:
       - name: Check for critical vulnerabilities in terraform code
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: 'fs'
-          scanners: 'config'
+          scan-type: 'config'
           exit-code: '1'
           scan-ref: ${{ inputs.working-directory }}
           severity: 'CRITICAL'
@@ -72,7 +71,6 @@ jobs:
       - name: Warn for other vulnerabilities in terraform code
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: 'fs'
-          scanners: 'config'
+          scan-type: 'config'
           exit-code: '0'
           scan-ref: ${{ inputs.working-directory }}
