@@ -43,6 +43,7 @@ jobs:
         name: Setup Terraform
         with:
           terraform_version: ${{ inputs.terraform-version }}
+          terraform_wrapper: ${{ inputs.use-terragrunt == 'true' && 'true' || 'false' }}
       - uses: armakuni/github-actions/setup-terragrunt@v0.15.6
         if: ${{ inputs.use-terragrunt == 'true' }}
         name: Setup Terragrunt
