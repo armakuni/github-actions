@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.12 - 2023-10-06
+#### Bug Fixes
+- Print the commands we are running - (977ae43) - Billie Thompson
+#### Continuous Integration
+- Check that terragrunt is there as the last step - (b7959d1) - Billie Thompson
+
+- - -
+
 ## v0.15.11 - 2023-10-06
 #### Bug Fixes
 - Switch back to this being a string - (35c003f) - Billie Thompson
