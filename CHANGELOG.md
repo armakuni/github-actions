@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.15.15 - 2023-10-06
+#### Bug Fixes
+- Remove checks that require secrets - (bb904cd) - Billie Thompson
+
+- - -
+
 ## v0.15.14 - 2023-10-06
 #### Bug Fixes
 - Add explicit call to terragrunt - (0cff781) - Billie Thompson
