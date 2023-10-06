@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./setup-terragrunt
+        id: setup-terragrunt
         with:
           version: 0.51.8
       - id: terragrunt_version
@@ -26,3 +27,8 @@ jobs:
           else
             echo "Incorrect version installed"
           fi
+      - name: Check output version number matches
+        uses: ./assert-equals
+        with:
+          expected: 0.51.8
+          actual: ${{ steps.setup-terragrunt.outputs.version }}
