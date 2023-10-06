@@ -65,7 +65,7 @@ jobs:
         with:
           scanners: 'config'
           exit-code: '1'
-          input: ${{ inputs.working-directory }}
+          scan-ref: ${{ inputs.working-directory }}
           severity: 'CRITICAL'
 
       - name: Warn for other vulnerabilities in terraform code
@@ -73,4 +73,4 @@ jobs:
         with:
           scanners: 'config'
           exit-code: '0'
-          input: ${{ inputs.working-directory }}
+          scan-ref: ${{ inputs.working-directory }}
