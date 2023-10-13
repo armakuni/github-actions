@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - id: bump-version
-        uses: armakuni/github-actions/generate-terraform-docs@v0.16.4
+        uses: armakuni/github-actions/generate-terraform-docs@v0.16.5
         with:
           output-file: ${{ inputs.output-file }}
           working-directory: ${{ inputs.working-directory }}
