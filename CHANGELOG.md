@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.16.9 - 2023-10-18
+#### Bug Fixes
+- **(deps)** bump armakuni/github-actions from 0.16.7 to 0.16.8 - (1714004) - dependabot[bot]
+
+- - -
+
 ## v0.16.8 - 2023-10-17
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.16.6 to 0.16.7 - (3fe77b0) - dependabot[bot]
