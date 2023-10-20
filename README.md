@@ -18,6 +18,8 @@ A collection of reusable Github Actions.
   Install Cocogitto.
 - [setup-terragrunt](./setup-terragrunt/README.md)
   Install Terragrunt.
+- [setup-poetry](./setup-poetry/README.md)
+  Install Poetry.
 
 
 ## Workflows

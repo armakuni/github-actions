@@ -1,19 +1,19 @@
-# Setup Terragrunt Action
+# Setup Poetry Action
 
-Install [Terragrunt](https://github.com/gruntwork-io/terragrunt) in Github Actions.
+Install [Poetry](https://python-poetry.org/) in Github Actions.
 
 ## Usage
 
 ### Latest Version
 
 ```yaml
-- uses: armakuni/github-actions/setup-terragrunt@{current_version}
+- uses: armakuni/github-actions/setup-poetry@{current_version}
 ```
 
 or alternatively
 
 ```yaml
-- uses: armakuni/github-actions/setup-terragrunt@{current_version}
+- uses: armakuni/github-actions/setup-poetry@{current_version}
   with:
     version: latest
 ```
@@ -21,7 +21,7 @@ or alternatively
 ### Specific Version
 
 ```yaml
-- uses: armakuni/github-actions/setup-terragrunt@{current_version}
+- uses: armakuni/github-actions/setup-poetry@{current_version}
   with:
-    version: 5.5.0
+    version: 1.6.1
 ```
