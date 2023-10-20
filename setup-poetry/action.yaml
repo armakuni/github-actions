@@ -60,7 +60,7 @@ runs:
       name: Cache poetry virtualenv and packages
       with:
         path: ${{ steps.poetry-cache-path.outputs.poetry-cache-path }}
-        key: ${{ runner.os }}-${{ runner.arch }}-python-${{ steps.setup-python.outputs.python-version }}-poetry-${{ hashFiles('poetry.lock') }}
+        key: ${{ runner.os }}-${{ runner.arch }}-python-${{ steps.python-version.outputs.python-version }}-poetry-${{ hashFiles('poetry.lock') }}
 branding:
   icon: 'award'
   color: 'purple'
