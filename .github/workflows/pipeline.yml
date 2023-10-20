@@ -33,6 +33,9 @@ jobs:
   test-setup-terragrunt:
     uses: ./.github/workflows/test-setup-terragrunt.yml
 
+  test-setup-poetry:
+    uses: ./.github/workflows/test-setup-poetry.yml
+
   test-repository-details:
     uses: ./.github/workflows/test-repository-details.yml
 
