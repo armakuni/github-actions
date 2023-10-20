@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.18.0 - 2023-10-20
+#### Features
+- Cache the poetry venvs - (8637fdb) - Billie Thompson
+
+- - -
+
 ## v0.17.6 - 2023-10-20
 #### Bug Fixes
 - Add caching to cog install - (19aed01) - Billie Thompson
