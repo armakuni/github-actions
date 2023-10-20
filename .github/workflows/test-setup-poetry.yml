@@ -11,7 +11,7 @@ jobs:
       - run: poetry --version
 
   test-setup-poetry-with-version:
-    name: Test setup-terragrunt (with version)
+    name: Test setup-poetry (with version)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
