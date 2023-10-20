@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.17.4 - 2023-10-20
+#### Bug Fixes
+- Correct version location - (3e3d564) - Billie Thompson
+- Cache terragrunt binary - (a6c0b84) - Billie Thompson
+- Ensure the arch is in the cache key - (a91cddf) - Billie Thompson
+
+- - -
+
 ## v0.17.3 - 2023-10-20
 #### Bug Fixes
 - Cache poetry venv - (4f7fb1f) - Billie Thompson
