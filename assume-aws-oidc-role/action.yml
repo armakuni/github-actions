@@ -17,7 +17,7 @@ runs:
   using: composite
   steps:
       - id: repository-details
-        uses: armakuni/github-actions/repository-details@v0.5.0
+        uses: armakuni/github-actions/repository-details@v0.16.10
 
       - uses: aws-actions/configure-aws-credentials@v3
         with:

@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.16.10 - 2023-10-20
+#### Bug Fixes
+- Bump versions in composite actions on release - (aba1222) - Billie Thompson
+- Bump versions in all workflows on release - (5b3acf5) - Billie Thompson
+#### Continuous Integration
+- Don't automatically update references to itself - (2ef05b2) - Tom Oram
+
+- - -
+
 ## v0.16.9 - 2023-10-18
 #### Bug Fixes
 - **(deps)** bump armakuni/github-actions from 0.16.7 to 0.16.8 - (1714004) - dependabot[bot]
