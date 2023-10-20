@@ -30,7 +30,7 @@ runs:
       uses: actions/cache@v3
       with:
         path: ${{ steps.paths.outputs.poetry-home }}
-        key: poetry-${{ runner.os }}-${[ runner.arch }}-${{ steps.python-version.outputs.python-version }}-${{ inputs.version }}
+        key: poetry-${{ runner.os }}-${{ runner.arch }}-${{ steps.python-version.outputs.python-version }}-${{ inputs.version }}
     - name: Install Poetry
       if: steps.cached-poetry-binary.outputs.cache-hit != 'true'
       shell: bash

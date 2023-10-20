@@ -25,7 +25,7 @@ runs:
       uses: actions/cache@v3
       with:
         path: ${{ steps.paths.outputs.poetry-home }}
-        key: terragrunt-${{ runner.os }}-${[ runner.arch }}-${{ inputs.version }}
+        key: terragrunt-${{ runner.os }}-${{ runner.arch }}-${{ inputs.version }}
     - name: Install Terragrunt
       if: steps.cached-terragrunt-binary.outputs.cache-hit != 'true'
       env:
