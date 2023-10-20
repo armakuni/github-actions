@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.17.3 - 2023-10-20
+#### Bug Fixes
+- Cache poetry venv - (4f7fb1f) - Billie Thompson
+#### Continuous Integration
+- Make poetry building a requirement of the release - (540e1fc) - Billie Thompson
+#### Documentation
+- Add some docs for poetry - (8fa8607) - Billie Thompson
+
+- - -
+
 ## v0.17.2 - 2023-10-20
 #### Bug Fixes
 - Correct install path - (b786f3a) - Billie Thompson
