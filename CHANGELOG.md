@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.17.1 - 2023-10-20
+#### Bug Fixes
+- POETRY_VERSION is already used in the install script - (2bc1ba5) - Billie Thompson
+#### Continuous Integration
+- Rename step - (7f431d8) - Billie Thompson
+- Add poetry pipeline to main pipeline - (a821d93) - Billie Thompson
+
+- - -
+
 ## v0.17.0 - 2023-10-20
 #### Continuous Integration
 - Renable dependabot now cycle is resolved - (d5e21c2) - Billie Thompson
