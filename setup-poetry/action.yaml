@@ -8,7 +8,7 @@ inputs:
 outputs:
   version:
     description: The version on the path
-    value: ${{ steps.install.outputs.version }}
+    value: ${{ steps.version.outputs.version }}
 
 runs:
   using: composite
@@ -18,13 +18,24 @@ runs:
       shell: bash
       run: |
         mkdir -p "$RUNNER_TEMP/poetry-home"
-        echo "poetry_home=$RUNNER_TEMP/poetry-home" >> "$GITHUB_OUTPUT"
+        echo "poetry-home=$RUNNER_TEMP/poetry-home" >> "$GITHUB_OUTPUT"
         echo "$RUNNER_TEMP/poetry-home/bin" >> "$GITHUB_PATH"
+    - name: Discover python version
+      shell: bash
+      id: python-version
+      run: |
+        echo "python-version=$(python3 --version | cut -f2 -d' ')" >> "$GITHUB_OUTPUT"
+    - name: Load cached Poetry Binary
+      id: cached-poetry-binary
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.paths.outputs.poetry-home }}
+        key: poetry-${{ runner.os }}-${{ steps.python-version.outputs.python-version }}-${{ inputs.version }}
     - name: Install Poetry
-      id: install
+      if: steps.cached-poetry-binary.outputs.cache-hit != 'true'
       shell: bash
       env:
-        POETRY_HOME: ${{ steps.paths.outputs.poetry_home }}
+        POETRY_HOME: ${{ steps.paths.outputs.poetry-home }}
         USERS_POETRY_VERSION: ${{ inputs.version }}
       run: |
         if [ "$USERS_POETRY_VERSION" == "latest" ] ; then
@@ -34,10 +45,12 @@ runs:
         fi
         
         curl -sSL https://install.python-poetry.org | python3 - "${POETRY_INSTALL_SUFFIX[@]}"
-        echo "version=$( poetry --version | cut -d '(' -f2 | cut -d " " -f2 |cut -d ")" -f1 )" >> "$GITHUB_OUTPUT"
     - name: Print version
       shell: bash
-      run: poetry --version
+      id: version
+      run: |
+        poetry --version
+        echo "version=$( poetry --version | cut -d '(' -f2 | cut -d " " -f2 |cut -d ")" -f1 )" >> "$GITHUB_OUTPUT"
 branding:
   icon: 'award'
   color: 'purple'
