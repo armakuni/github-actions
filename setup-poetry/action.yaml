@@ -51,6 +51,17 @@ runs:
       run: |
         poetry --version
         echo "version=$( poetry --version | cut -d '(' -f2 | cut -d " " -f2 |cut -d ")" -f1 )" >> "$GITHUB_OUTPUT"
+    - name: Get poetry cache path
+      shell: bash
+      id: poetry-cache-path
+      run: |
+        poetry config cache-dir
+        echo "poetry-cache-path=$( poetry config cache-dir )" >> "$GITHUB_OUTPUT"
+    - uses: actions/cache@v3
+      name: Cache poetry virtualenv and packages
+      with:
+        path: ${{ steps.poetry-cache-path.outputs.poetry-cache-path }}
+        key: ${{ runner.os }}-${{ runner.arch }}-python-${{ steps.setup-python.outputs.python-version }}-poetry-${{ hashFiles('poetry.lock') }}
 branding:
   icon: 'award'
   color: 'purple'
