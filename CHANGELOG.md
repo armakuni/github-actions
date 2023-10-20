@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.17.0 - 2023-10-20
+#### Continuous Integration
+- Renable dependabot now cycle is resolved - (d5e21c2) - Billie Thompson
+#### Features
+- Add a install poetry action - (edcf373) - Billie Thompson
+
+- - -
+
 ## v0.16.10 - 2023-10-20
 #### Bug Fixes
 - Bump versions in composite actions on release - (aba1222) - Billie Thompson
