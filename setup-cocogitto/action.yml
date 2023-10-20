@@ -14,4 +14,4 @@ runs:
       with:
         repo: cocogitto/cocogitto
         tag: ${{ inputs.version }}
-  
+        cache: enable
