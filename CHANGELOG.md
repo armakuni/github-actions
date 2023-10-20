@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.18.1 - 2023-10-20
+#### Bug Fixes
+- Correct cache key's python version - (f09ce45) - Billie Thompson
+#### Refactoring
+- Remove unneeded print - (2d05e1d) - Billie Thompson
+
+- - -
+
 ## v0.18.0 - 2023-10-20
 #### Features
 - Cache the poetry venvs - (8637fdb) - Billie Thompson
