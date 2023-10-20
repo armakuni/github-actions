@@ -55,7 +55,6 @@ runs:
       shell: bash
       id: poetry-cache-path
       run: |
-        poetry config cache-dir
         echo "poetry-cache-path=$( poetry config cache-dir )" >> "$GITHUB_OUTPUT"
     - uses: actions/cache@v3
       name: Cache poetry virtualenv and packages
