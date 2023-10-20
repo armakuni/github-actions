@@ -1,0 +1,35 @@
+on:
+  workflow_call:
+
+jobs:
+  test-setup-poetry-without-version:
+    name: Test setup-poetry (without version)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./setup-poetry
+      - run: poetry --version
+
+  test-setup-poetry-with-version:
+    name: Test setup-terragrunt (with version)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./setup-poetry
+        id: setup-poetry
+        with:
+          version: 1.6.1
+      - id: poetry_version
+        run: |
+          installed_version="$(poetry --version)"
+          if [ "$installed_version" == "Poetry (version 1.6.1)" ] ; then
+            echo "Correct version installed"
+          else
+            echo "Incorrect version installed"
+          fi
+      - name: Check output version number matches
+        uses: ./assert-equals
+        with:
+          expected: 1.6.1
+          actual: ${{ steps.setup-poetry.outputs.version }}
+

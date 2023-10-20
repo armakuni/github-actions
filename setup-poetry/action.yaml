@@ -1,0 +1,44 @@
+name: Setup Poetry Action
+description: Setup the Poetry on the path
+inputs:
+  version:
+    description: Version of Poetry to install
+    required: false
+    default: 'latest'
+outputs:
+  version:
+    description: The version on the path
+    value: ${{ steps.install.outputs.version }}
+
+runs:
+  using: composite
+  steps:
+    - name: Setup path
+      id: paths
+      shell: bash
+      run: |
+        mkdir -p "$RUNNER_TEMP/poetry-home"
+        echo "poetry_home=$RUNNER_TEMP/poetry-home" >> "$GITHUB_OUTPUT"
+        echo "poetry_home=$RUNNER_TEMP/poetry-home/bin" >> "$GITHUB_PATH"
+    - name: Install Poetry
+      id: install
+      shell: bash
+      env:
+        POETRY_HOME: ${{ steps.paths.outputs.poetry_home }}
+        POETRY_VERSION: ${{ inputs.version }}
+      run: |
+        if [ "$POETRY_VERSION" == "latest" ] ; then
+          POETRY_INSTALL_SUFFIX=()
+        else
+          POETRY_INSTALL_SUFFIX=("--version", "$POETRY_VERSION")
+        fi
+        
+        curl -sSL https://install.python-poetry.org | python3 - "${POETRY_INSTALL_SUFFIX[@]}"
+        echo "version=$( poetry --version | cut -d '(' -f2 | cut -d " " -f2 |cut -d ")" -f1 )" >> "$GITHUB_OUTPUT"
+    - name: Print version
+      shell: bash
+      run: poetry --version
+branding:
+  icon: 'award'
+  color: 'purple'
+
