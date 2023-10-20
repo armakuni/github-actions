@@ -53,6 +53,7 @@ jobs:
       - test-repository-details
       - test-setup-cocogitto
       - test-setup-terragrunt
+      - test-setup-poetry
     runs-on: ubuntu-latest
     steps:
       - run: echo OK
