@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.17.5 - 2023-10-20
+#### Bug Fixes
+- Correct how we get the achitecture - (a99ea57) - Billie Thompson
+
+- - -
+
 ## v0.17.4 - 2023-10-20
 #### Bug Fixes
 - Correct version location - (3e3d564) - Billie Thompson
