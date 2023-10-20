@@ -25,12 +25,12 @@ runs:
       shell: bash
       env:
         POETRY_HOME: ${{ steps.paths.outputs.poetry_home }}
-        POETRY_VERSION: ${{ inputs.version }}
+        USERS_POETRY_VERSION: ${{ inputs.version }}
       run: |
-        if [ "$POETRY_VERSION" == "latest" ] ; then
+        if [ "$USERS_POETRY_VERSION" == "latest" ] ; then
           POETRY_INSTALL_SUFFIX=()
         else
-          POETRY_INSTALL_SUFFIX=("--version", "$POETRY_VERSION")
+          POETRY_INSTALL_SUFFIX=("--version" "$USERS_POETRY_VERSION")
         fi
         
         curl -sSL https://install.python-poetry.org | python3 - "${POETRY_INSTALL_SUFFIX[@]}"
