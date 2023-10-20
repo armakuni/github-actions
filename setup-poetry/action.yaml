@@ -19,7 +19,7 @@ runs:
       run: |
         mkdir -p "$RUNNER_TEMP/poetry-home"
         echo "poetry_home=$RUNNER_TEMP/poetry-home" >> "$GITHUB_OUTPUT"
-        echo "poetry_home=$RUNNER_TEMP/poetry-home/bin" >> "$GITHUB_PATH"
+        echo "$RUNNER_TEMP/poetry-home/bin" >> "$GITHUB_PATH"
     - name: Install Poetry
       id: install
       shell: bash
