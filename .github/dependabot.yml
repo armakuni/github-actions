@@ -9,7 +9,3 @@ updates:
       prefix: fix
       prefix-development: build
       include: "scope"
-    ignore:
-      # This currently creates a loop between the actions and the workflows.
-      # Ideally they would up date but this requires a bit more thinking.
-      - dependency-name: armakuni/github-actions
