@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.17.2 - 2023-10-20
+#### Bug Fixes
+- Correct install path - (b786f3a) - Billie Thompson
+
+- - -
+
 ## v0.17.1 - 2023-10-20
 #### Bug Fixes
 - POETRY_VERSION is already used in the install script - (2bc1ba5) - Billie Thompson
