@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.18.2 - 2023-10-30
+#### Bug Fixes
+- **(deps)** bump hashicorp/setup-terraform from 2 to 3 - (b62a4eb) - dependabot[bot]
+
+- - -
+
 ## v0.18.1 - 2023-10-20
 #### Bug Fixes
 - Correct cache key's python version - (f09ce45) - Billie Thompson
