@@ -45,6 +45,12 @@ runs:
         fi
         
         curl -sSL https://install.python-poetry.org | python3 - "${POETRY_INSTALL_SUFFIX[@]}"
+    - name: Add export plugin
+      shell: bash
+      env:
+        POETRY_HOME: ${{ steps.paths.outputs.poetry-home }}
+      run: |
+        $POETRY_HOME/bin/pip install --user poetry-plugin-export
     - name: Print version
       shell: bash
       id: version
