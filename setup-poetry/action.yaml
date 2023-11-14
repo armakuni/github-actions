@@ -50,7 +50,7 @@ runs:
       env:
         POETRY_HOME: ${{ steps.paths.outputs.poetry-home }}
       run: |
-        $POETRY_HOME/bin/pip install --user poetry-plugin-export
+        $POETRY_HOME/bin/python -m pip install --user poetry-plugin-export
     - name: Print version
       shell: bash
       id: version
