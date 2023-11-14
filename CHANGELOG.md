@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.1 - 2023-11-14
+#### Bug Fixes
+- Revert "fix: Fix warning about explicit install of export" - (fd54239) - Billie Thompson
+- Use python -m to reference pip - (8b8e292) - Billie Thompson
+- Fix warning about explicit install of export - (21974a9) - Billie Thompson
+
+- - -
+
 ## v0.19.0 - 2023-11-13
 #### Features
 - Support pipelines without branch protections - (dea374c) - Rory Grieve
