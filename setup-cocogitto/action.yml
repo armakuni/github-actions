@@ -1,17 +1,20 @@
+---
 name: Setup Cocogitto
 description: Installs https://github.com/cocogitto/cocogitto
-
 inputs:
   version:
     description: The Cocogitto version to install
     required: false
-
 runs:
   using: composite
   steps:
-    - name: setup-cocogitto
-      uses: jaxxstorm/action-install-gh-release@v1.10.0
+    - uses: taiki-e/install-action@v2
+      if: ${{ inputs.version == '' }}
+      name: Install specific cocogitto version
       with:
-        repo: cocogitto/cocogitto
-        tag: ${{ inputs.version }}
-        cache: enable
+        tool: cocogitto
+    - uses: taiki-e/install-action@v2
+      if: ${{ inputs.version != '' }}
+      name: Install specific cocogitto version
+      with:
+        tool: cocogitto@${{ inputs.version }}
