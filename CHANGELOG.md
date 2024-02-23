@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.3 - 2024-02-23
+#### Bug Fixes
+- **(deps)** bump ncipollo/release-action from 1.13.0 to 1.14.0 - (c9c83fc) - dependabot[bot]
+
+- - -
+
 ## v0.19.2 - 2024-02-23
 #### Bug Fixes
 - Fix the cog installer - (6911b64) - Billie Thompson
