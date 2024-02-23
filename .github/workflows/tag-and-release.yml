@@ -75,7 +75,7 @@ jobs:
         uses: actions/download-artifact@v3
 
       - name: create-github-release
-        uses: ncipollo/release-action@v1.13.0
+        uses: ncipollo/release-action@v1.14.0
         with:
           allowUpdates: true
           artifacts: ${{ inputs.release-artifacts }}
