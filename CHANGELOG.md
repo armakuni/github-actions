@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.4 - 2024-09-06
+#### Bug Fixes
+- **(deps)** bump actions/download-artifact from 3 to 4 - (d615b3c) - dependabot[bot]
+- **(deps)** bump dependabot/fetch-metadata from 1 to 2 - (776800a) - dependabot[bot]
+- Upgrade to artifact v4 - (8232684) - Billie Thompson
+
+- - -
+
 ## v0.19.3 - 2024-02-23
 #### Bug Fixes
 - **(deps)** bump ncipollo/release-action from 1.13.0 to 1.14.0 - (c9c83fc) - dependabot[bot]
