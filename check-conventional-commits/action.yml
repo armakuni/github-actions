@@ -1,5 +1,5 @@
 name: Check Conventional Commits
-description: This Github Action ensures that all commit messages conform to the convential commits format.
+description: This Github Action ensures that all commit messages conform to the conventional commits format.
 
 inputs:
   working-directory:
