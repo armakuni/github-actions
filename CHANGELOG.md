@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.5 - 2025-01-13
+#### Bug Fixes
+- **(deps)** bump ncipollo/release-action from 1.14.0 to 1.15.0 - (793d8c5) - dependabot[bot]
+#### Continuous Integration
+- correct output for terragrunt - (bfafe5e) - Billie Thompson
+
+- - -
+
 ## v0.19.4 - 2024-09-06
 #### Bug Fixes
 - **(deps)** bump actions/download-artifact from 3 to 4 - (d615b3c) - dependabot[bot]
