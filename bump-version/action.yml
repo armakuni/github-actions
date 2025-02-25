@@ -20,7 +20,7 @@ outputs:
 runs:
   using: composite
   steps:
-    - uses: armakuni/github-actions/setup-cocogitto@v0.19.5
+    - uses: armakuni/github-actions/setup-cocogitto@v0.19.6
       with:
         version: 5.5.0
     - id: previous-version

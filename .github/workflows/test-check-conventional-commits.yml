@@ -47,7 +47,7 @@ jobs:
           working-directory: test-repo
 
       - name: confirm-failure
-        uses: armakuni/github-actions/assert-equals@v0.19.5
+        uses: armakuni/github-actions/assert-equals@v0.19.6
         with:
           expected: failure
           actual: "${{ steps.check-failure.outcome }}"
@@ -82,13 +82,13 @@ jobs:
           working-directory: test-repo
 
       - name: confirm-bump-version-is-empty
-        uses: armakuni/github-actions/assert-equals@v0.19.5
+        uses: armakuni/github-actions/assert-equals@v0.19.6
         with:
           expected: 
           actual: "${{ steps.check-conventional-commits.outputs.bump-version }}"
 
       - name: confirm-will-bump-is-false
-        uses: armakuni/github-actions/assert-equals@v0.19.5
+        uses: armakuni/github-actions/assert-equals@v0.19.6
         with:
           expected: 'false'
           actual: "${{ steps.check-conventional-commits.outputs.will-bump }}"
@@ -126,13 +126,13 @@ jobs:
           working-directory: test-repo
 
       - name: confirm-bump-version-is-empty
-        uses: armakuni/github-actions/assert-equals@v0.19.5
+        uses: armakuni/github-actions/assert-equals@v0.19.6
         with:
           expected: 
           actual: "${{ steps.check-conventional-commits.outputs.bump-version }}"
 
       - name: confirm-will-bump-is-false
-        uses: armakuni/github-actions/assert-equals@v0.19.5
+        uses: armakuni/github-actions/assert-equals@v0.19.6
         with:
           expected: 'false'
           actual: "${{ steps.check-conventional-commits.outputs.will-bump }}"
@@ -170,13 +170,13 @@ jobs:
           working-directory: test-repo
 
       - name: confirm-bump-version-is-next-semver
-        uses: armakuni/github-actions/assert-equals@v0.19.5
+        uses: armakuni/github-actions/assert-equals@v0.19.6
         with:
           expected: '0.2.0'
           actual: "${{ steps.check-conventional-commits.outputs.bump-version }}"
   
       - name: confirm-will-bump-is-true
-        uses: armakuni/github-actions/assert-equals@v0.19.5
+        uses: armakuni/github-actions/assert-equals@v0.19.6
         with:
           expected: 'true'
           actual: "${{ steps.check-conventional-commits.outputs.will-bump }}"
