@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.7 - 2025-06-30
+#### Bug Fixes
+- **(deps)** bump ncipollo/release-action from 1.16.0 to 1.18.0 - (a2f2b2a) - dependabot[bot]
+#### Continuous Integration
+- **(mergify)** upgrade configuration to current format - (cf02b80) - Mergify
+
+- - -
+
 ## v0.19.6 - 2025-02-25
 #### Bug Fixes
 - **(deps)** bump ncipollo/release-action from 1.15.0 to 1.16.0 - (34dc07e) - dependabot[bot]
