@@ -17,7 +17,7 @@ jobs:
       will-bump: ${{ steps.check-conventional-commits.outputs.will-bump }}
       bump-version: ${{ steps.check-conventional-commits.outputs.bump-version }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - id: check-conventional-commits
