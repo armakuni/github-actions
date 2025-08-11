@@ -6,7 +6,7 @@ jobs:
     name: Test check-conventional-commits
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: armakuni-actions
 
@@ -56,7 +56,7 @@ jobs:
     name: Test check-conventional-commits when nothing to bump
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: armakuni-actions
 
@@ -97,7 +97,7 @@ jobs:
     name: Test check-conventional-commits when nothing to bump
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: armakuni-actions
 
@@ -141,7 +141,7 @@ jobs:
     name: Test check-conventional-commits when something to bump
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: armakuni-actions
 

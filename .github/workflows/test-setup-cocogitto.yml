@@ -6,7 +6,7 @@ jobs:
     name: Test setup-cocogitto (without version)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./setup-cocogitto
       - run: cog --version
 
@@ -14,7 +14,7 @@ jobs:
     name: Test setup-cocogitto (with version)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./setup-cocogitto
         with:
           version: 5.0.0
