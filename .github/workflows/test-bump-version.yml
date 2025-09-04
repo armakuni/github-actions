@@ -44,19 +44,19 @@ jobs:
         working-directory: test-repo
 
       - name: check-previous-version
-        uses: armakuni/github-actions/assert-equals@v0.19.9
+        uses: armakuni/github-actions/assert-equals@v0.19.10
         with:
           expected: "2.1.3"
           actual: ${{ steps.bump-version.outputs.previous-version }}
 
       - name: check-current-version
-        uses: armakuni/github-actions/assert-equals@v0.19.9
+        uses: armakuni/github-actions/assert-equals@v0.19.10
         with:
           expected: "2.2.0"
           actual: ${{ steps.bump-version.outputs.current-version }}
 
       - name: check-version-was-bumped
-        uses: armakuni/github-actions/assert-equals@v0.19.9
+        uses: armakuni/github-actions/assert-equals@v0.19.10
         with:
           expected: "true"
           actual: "${{ steps.bump-version.outputs.version-was-bumped }}"
@@ -98,19 +98,19 @@ jobs:
           working-directory: test-repo
 
       - name: check-previous-version
-        uses: armakuni/github-actions/assert-equals@v0.19.9
+        uses: armakuni/github-actions/assert-equals@v0.19.10
         with:
           expected: "2.1.3"
           actual: ${{ steps.bump-version.outputs.previous-version }}
 
       - name: check-current-version
-        uses: armakuni/github-actions/assert-equals@v0.19.9
+        uses: armakuni/github-actions/assert-equals@v0.19.10
         with:
           expected: "2.1.3"
           actual: ${{ steps.bump-version.outputs.current-version }}
 
       - name: check-version-was-bumped
-        uses: armakuni/github-actions/assert-equals@v0.19.9
+        uses: armakuni/github-actions/assert-equals@v0.19.10
         with:
           expected: "false"
           actual: "${{ steps.bump-version.outputs.version-was-bumped }}"
