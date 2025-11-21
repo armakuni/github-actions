@@ -6,7 +6,7 @@ jobs:
     name: Test setup-terragrunt (without version)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./setup-terragrunt
       - run: terragrunt --version
 
@@ -14,7 +14,7 @@ jobs:
     name: Test setup-terragrunt (with version)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./setup-terragrunt
         id: setup-terragrunt
         with:
@@ -37,7 +37,7 @@ jobs:
     name: Setup terragrunt sets non interactive mode
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./setup-terragrunt
       - name: Check output version number matches
         uses: ./assert-equals

@@ -38,7 +38,7 @@ jobs:
           USE_TERRAGRUNT: ${{ inputs.use-terragrunt == 'true' && 'true' || 'false' }}
         shell: bash
         id: binary_name
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         name: Checkout
       - uses: hashicorp/setup-terraform@v3
         name: Setup Terraform
