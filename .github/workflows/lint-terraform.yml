@@ -45,7 +45,7 @@ jobs:
         with:
           terraform_version: ${{ inputs.terraform-version }}
           terraform_wrapper: ${{ steps.binary_name.outputs.bin_name == 'terragrunt' && 'true' || 'false' }}
-      - uses: armakuni/github-actions/setup-terragrunt@v0.19.10
+      - uses: armakuni/github-actions/setup-terragrunt@v0.19.11
         if: ${{ steps.binary_name.outputs.bin_name == 'terragrunt' }}
         name: Setup Terragrunt
         with:
