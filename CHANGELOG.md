@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.12 - 2026-02-24
+#### Bug Fixes
+- **(deps)** bump hashicorp/setup-terraform from 3 to 4 - (22708a3) - dependabot[bot]
+
+- - -
+
 ## v0.19.11 - 2025-11-21
 #### Bug Fixes
 - **(deps)** bump actions/checkout from 5 to 6 - (d206a8e) - dependabot[bot]

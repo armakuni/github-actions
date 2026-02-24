@@ -16,19 +16,19 @@ jobs:
         uses: ./repository-details
         
       - name: check-owner
-        uses: armakuni/github-actions/assert-equals@v0.19.11
+        uses: armakuni/github-actions/assert-equals@v0.19.12
         with:
           expected: "armakuni"
           actual: ${{ steps.details.outputs.owner }}
 
       - name: check-name
-        uses: armakuni/github-actions/assert-equals@v0.19.11
+        uses: armakuni/github-actions/assert-equals@v0.19.12
         with:
           expected: "github-actions"
           actual: "${{ steps.details.outputs.name }}"
 
       - name: check-branch
-        uses: armakuni/github-actions/assert-equals@v0.19.11
+        uses: armakuni/github-actions/assert-equals@v0.19.12
         with:
           expected: "${{ steps.get-branch.outputs.branch }}"
           actual: "${{ steps.details.outputs.branch }}"
