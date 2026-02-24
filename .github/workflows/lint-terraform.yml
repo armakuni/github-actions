@@ -40,7 +40,7 @@ jobs:
         id: binary_name
       - uses: actions/checkout@v6
         name: Checkout
-      - uses: hashicorp/setup-terraform@v3
+      - uses: hashicorp/setup-terraform@v4
         name: Setup Terraform
         with:
           terraform_version: ${{ inputs.terraform-version }}
