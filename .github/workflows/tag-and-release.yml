@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Download all workflow run artifacts
         if: inputs.download-artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
 
       - uses: actions/checkout@v6
         with:
@@ -72,7 +72,7 @@ jobs:
 
       - name: Download all workflow run artifacts
         if: inputs.download-artifacts && inputs.release-artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
 
       - name: create-github-release
         uses: ncipollo/release-action@v1.20.0
