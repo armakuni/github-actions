@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.13 - 2026-03-16
+#### Bug Fixes
+- **(deps)** bump ncipollo/release-action from 1.20.0 to 1.21.0 - (30e6e76) - dependabot[bot]
+
+- - -
+
 ## v0.19.12 - 2026-02-24
 #### Bug Fixes
 - **(deps)** bump hashicorp/setup-terraform from 3 to 4 - (22708a3) - dependabot[bot]
