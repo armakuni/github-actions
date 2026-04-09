@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.14 - 2026-04-09
+#### Bug Fixes
+- **(deps)** bump dependabot/fetch-metadata from 2 to 3 - (f9b4cac) - dependabot[bot]
+
+- - -
+
 ## v0.19.13 - 2026-03-16
 #### Bug Fixes
 - **(deps)** bump ncipollo/release-action from 1.20.0 to 1.21.0 - (30e6e76) - dependabot[bot]
