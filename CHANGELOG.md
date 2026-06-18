@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.19.15 - 2026-06-18
+#### Bug Fixes
+- **(deps)** bump actions/checkout from 6 to 7 - (57bddc5) - dependabot[bot]
+
+- - -
+
 ## v0.19.14 - 2026-04-09
 #### Bug Fixes
 - **(deps)** bump dependabot/fetch-metadata from 2 to 3 - (f9b4cac) - dependabot[bot]
